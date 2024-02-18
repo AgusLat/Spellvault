@@ -1,0 +1,233 @@
+.spellCard-container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100vw;
+    padding: 0.75rem 0rem;
+    line-height: 1.3;
+    background-color: black;
+}
+
+.spellCard-container__no-matches{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+
+
+.spellCard{
+    width: 70%;
+    color: var(--text);
+    background-color: var(--secondary);
+    border-radius: 0.2rem;
+    
+    border: 0.1rem solid rgba(255, 255, 255, 0.250);
+}
+
+.spellCard__details{
+  padding:  1rem ;
+  cursor: pointer;
+
+}
+.spellCard__details-icon{
+width: 1.2rem;
+}
+
+
+.spellCard__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.spellCard__name{
+  padding-top: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spellCard__title{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 1rem;
+
+}
+
+.spellCard__title h2{
+  margin: 0;
+  display: inline-block;
+  text-shadow: 0px 0px 2px white;
+}
+
+.spellCard__subtitle{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 0.3rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.8rem;
+
+
+}
+
+.spellCard__icon{
+    object-fit: contain;
+    display: inline-block;
+    width: 1.8rem;
+    margin-right: 0.5rem;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.spellCard__body{
+  display: flex;
+  flex-direction: column;
+  
+  padding: 1rem;
+  gap: 1rem;
+}
+
+
+
+
+.spellCard__gridWrapper{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 1px solid rgba(128, 128, 128, 0.200);
+  border-radius: 0.5rem;
+
+}
+
+.spellCard__gridItem1{
+  border-top-left-radius: 0.2rem;
+}
+.spellCard__gridItem2{
+  border-top-right-radius: 0.2rem;
+
+}
+.spellCard__gridItem5{
+
+  grid-column: 1/ 3 ;
+  grid-row: 3;
+  border-bottom-left-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+
+
+}
+
+.--border{
+  border: 1px solid rgba(128, 128, 128, 0.200);
+  padding: 0.3rem;
+}
+
+
+
+.spellCard__description{
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid rgba(128, 128, 128, 0.200);
+}
+
+.spellCard__footer{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 1rem 1rem 0;
+}
+
+/* CSS TRANSITION */
+
+.showSpellCardBody-appear {
+  opacity: 0;
+  display: none;
+}
+.showSpellCardBody-appear-active {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+.showSpellCardBody-appear-done {
+  opacity: 0;
+  display: none;
+}
+
+.showSpellCardBody-exit {
+  opacity: 0;
+}
+.showSpellCardBody-exit-active {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+.showSpellCardBody-exit-done {
+  opacity: 1; 
+}
+/* ---------------- */
+
+.showSpellCardBody-enter {
+  opacity: 1;
+  height: auto;
+}
+.showSpellCardBody-enter-active {
+  display: none;
+  opacity: 0;
+  transition: opacity 500ms;
+}
+.showSpellCardBody-enter-done {
+  display: none;
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+
+
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+    html, body {
+      font-size: 0.5rem;
+    }
+
+    .spellCard{
+        width: 90vw;
+        
+    }
+
+    .spellCard__title h2{
+      font-size: 1rem;
+    }
+
+    .spellCard__subtitle{
+      font-size: 0.7rem;
+    }
+    .spellCard__body{
+      font-size: 0.9rem;
+    }
+  }
+  /* TABLET */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    html, body  {
+      font-size: 0.5rem;
+    }
+
+    .spellCard__title h2{
+      font-size: 1.2rem;
+    }
+  }
+  
+  /* DESKTOP */
+  @media (min-width: 1024px) {
+    html, body  {
+      font-size: 1rem;
+    }
+
+    .spellCard__title h2{
+      font-size: 1.2rem;
+    }
+  } 

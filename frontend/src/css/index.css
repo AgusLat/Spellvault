@@ -1,0 +1,44 @@
+:root{
+  --primary: #23886A;
+  --secondary:#212121;
+  --terciary: #7cb8a6;
+  --text:#cfcfcf;
+  --accent: #17fcb7;
+  --special: #b9b88d;
+  font-family: 'Philosopher', sans-serif;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  font-size: 16px;
+  background-color: black;
+}
+
+#root { 
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+
+/*TEMPLATE FOR DESKTOP, TABLET AND MOBILE RESOLUTIONS*/
+
+ 
+/* MOBILE */
+@media (max-width: 768px) {
+  
+}
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  
+} 
+
