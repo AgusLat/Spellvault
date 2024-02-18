@@ -10,7 +10,8 @@ export const useSpellSearch = (spellId)=>{
         }
 
         try {
-            const response = await fetch(`http://localhost:4000/api/spells/${spellId}`)
+            //ROUTE CAN BE MODIFIED TO 'http://localhost:4000/api/spells'
+            const response = await fetch(`https://spellvault-api.vercel.app/api/spells/${spellId}`)
       
             const spellData = await response.json()
             console.log(spellData) //SINGLE SPELL OBJECT
