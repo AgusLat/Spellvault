@@ -10,10 +10,15 @@ CANTRIP #A1D5D0
 
 
 
-*CAMBIAR LAS SIGUIENTES URLS*
+*CAMBIAR LAS SIGUIENTES URLS* (HECHO)
 
 hooks:
     -useAdvancedSpellSearch
     -useSpellSearch
 pages:
     -Home (homeLoader)
+
+SOLUCIONAR EL PROBLEMA DE REAJUSTE VERTICAL EN MOBILE
+
+-Se cambia el tamaño de los componentes al mostrarse/ocultarse la barra de navegacion.
+-Intentar modificar la unidad dvh->vh

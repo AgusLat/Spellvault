@@ -4,7 +4,7 @@
 /* LAYOUT COMPONENT */
 .layout{
     width: 100%;
-    height: 100dvh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -17,7 +17,7 @@
     background-color: black;
     color: var(--text);
     font-weight: bold;
-    height: 10dvh;
+    height: 10vh;
     display: flex;
     position: fixed;
     width: 100%;
@@ -49,7 +49,7 @@
 
 .nav__ul{
     display: flex;
-    height: 10dvh;
+    height: 10vh;
     margin: 0px;
     list-style: none;
     align-items: center;
@@ -80,7 +80,7 @@
 .pages{
     width: 100%;
     /* min-height: 90vh; */
-    margin-top: 10dvh;
+    margin-top: 10vh;
     background-color: black;
 }
 
@@ -93,7 +93,7 @@
     .nav__smoke{
         display: flex;
         position: absolute;
-        height: 200dvh;
+        height: 200vh;
         width: 100dvw;
         background-color: black;
         opacity: 0.5;
@@ -111,8 +111,8 @@
         flex-direction: column;
         align-items: flex-end;
         position: absolute;
-       height: 90dvh;
-       top: 10dvh;
+       height: 90vh;
+       top: 10vh;
        right: 0;
      
        /* background-color: rgba(0, 0, 0, 0.357); */
