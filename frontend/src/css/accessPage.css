@@ -179,3 +179,28 @@ text-align: center;
         opacity: 1;
     }
 }
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .registerForm{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color:var(--secondaryTransparent);
+        min-width: auto;
+        max-width: 350px;
+        /* width: 25%; */
+        height: 65vh;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        letter-spacing: 0.1rem;
+        box-shadow: 2px 2px 8px 1px #0000005c;
+    }
+
+    .registerForm__selector{
+        min-width: auto;
+    }
+
+}
