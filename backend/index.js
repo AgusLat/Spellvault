@@ -1,7 +1,9 @@
-import 'dotenv/config'
-import cors from 'cors'
+import 'dotenv/config';
+import cors from 'cors';
 import express  from "express";
-import {router as spellRoutes} from './routes/spells.js'
+import { router as spellRoutes } from './routes/spells.js';
+import { router as userRoutes } from './routes/users.js';
+import {router as profileRoutes} from './routes/profile.js';
 import { connectDb } from './connectDb.js';
 
 const app = express()
@@ -23,6 +25,10 @@ app.use( (req, res, next) => {
 
 //ROUTES
 app.use('/api/spells', spellRoutes)
+
+app.use('/api/user', userRoutes)
+
+app.use('/api/profile', profileRoutes)
 
 
 
