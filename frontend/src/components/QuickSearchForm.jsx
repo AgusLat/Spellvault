@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useSpellSearch } from '../hooks/useSpellSearch'
 import '../css/searchForms.css'
+import '../css/loadingPage.css'
 
 //COMPONENTS
 import { SpellCard } from './SpellCard'
@@ -94,7 +95,7 @@ export const QuickSearchForm = ({spells, count}) => {
       </ul>
 
       <div className='spellCard-container'>
-        {loading?<Loading></Loading>:null}
+        {loading?<Loading size={'--small'}/>:null}
         {searchError && <div className='spellCard-container__no-matches'><h3>No coincidences</h3></div>}
         {spellCardData && <SpellCard key={spellCardData._id} spellId={spellCardData._id} spellData={spellCardData}></SpellCard> }
       </div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useAdvancedSearch } from '../hooks/useAdvancedSearch'
 import '../css/searchForms.css'
+import '../css/loadingPage.css'
 
 //COMPONENTS
 import SpellList from './SpellList'
@@ -99,8 +100,8 @@ export const AdvancedSearchForm = ({spells}) => {
         </form>
     </div>
 
-    {noSearch && <NoSearch></NoSearch>}
-    {loading?<Loading></Loading>:null}
+    {noSearch && <NoSearch/>}
+    {loading?<Loading size={'--small'}/>:null}
     {spellResults && <SpellList spellData={spellResults}></SpellList>}
 
     

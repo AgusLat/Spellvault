@@ -22,9 +22,15 @@
     color: var(--text);
     background-color: var(--secondary);
     border-radius: 0.2rem;
-    
     border: 0.1rem solid rgba(255, 255, 255, 0.250);
+    transition: all 500ms;
 }
+
+.spellCard:hover{
+  scale: 1.06;
+  transition: all 500ms;
+}
+
 
 .spellCard__details{
   padding:  1rem ;

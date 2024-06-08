@@ -1,16 +1,20 @@
 :root{
-  --primary: #23886A;
+  --primary: #23886a;
   --secondary:#212121;
+  --secondaryTransparent:#21212182;
   --terciary: #7cb8a6;
-  --text:#cfcfcf;
+  --text:#e4e4e4;
   --accent: #17fcb7;
   --special: #b9b88d;
+  --error: #ed8282;
   font-family: 'Philosopher', sans-serif;
+  letter-spacing: 0.1rem;
+
 }
 
 html, body {
   margin: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   overflow-x: hidden;
   font-size: 16px;

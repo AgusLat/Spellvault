@@ -55,7 +55,46 @@ box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 1),
 }
 
 
+.access-modal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 90vh;
+  top: 10vh;
+  background-color: rgba(47, 47, 47, 0.395);
+  position: absolute;
+  
+}
 
+
+
+.access-modal.active{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: 0.5s ease;
+}
+
+.access-modal.inactive{
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: 0.5s ease;
+}
+
+
+.access-modal:nth-child(-n + 2){
+  background-color: rgba(0, 0, 0, 0.801);
+
+}
+
+.access-modal__wrapper{
+  background-color:var(--secondaryTransparent);
+
+
+}
 
 /* ---SEARCH-SELECTOR BLOCK--- */
 

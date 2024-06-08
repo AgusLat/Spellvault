@@ -1,0 +1,9 @@
+.spellForgePage{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 90vh;
+    background-color: var(--secondary);
+    color: var(--text);
+
+}

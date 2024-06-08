@@ -1,11 +1,13 @@
 import React, { useState, useRef } from 'react'
-import { useLoaderData } from 'react-router-dom'
+import { useLoaderData, useNavigation } from 'react-router-dom'
 import {CSSTransition} from 'react-transition-group'
 import '../css/home.css'
+import '../css/accessPage.css'
 
 //COMPONENTS
 import { QuickSearchForm } from '../components/QuickSearchForm'
 import { AdvancedSearchForm } from '../components/AdvancedSearchForm'
+import { Loading } from '../components/Loading'
 
 
 
@@ -14,10 +16,17 @@ export const Home = () => {
   
   //LOADER DATA
   const {count, spells} = useLoaderData()
+  const navigation = useNavigation()
 
-  
   const [isAdvanced, setIsAdvanced] = useState(false)
   const nodeRef = useRef(null) 
+
+  if(navigation.state === "loading" ){
+    return <>
+          <Loading/>
+    </>
+          
+  }
 
 
   return (
@@ -61,8 +70,10 @@ export const homeLoader = async () => {
       const response = await fetch("https://spellvault-api.vercel.app/api/spells/") 
 
       const data = await response.json()
-      console.log("LOADER DATA", {count: data.length, spells: data})
-      return ({count: data.length, spells: data})
+      // console.log("LOADER DATA", {count: data.length, spells: data})
+       return ({count: data.length, spells: data})
+      // return defer({data})
+
 
         
     } catch (error) {
