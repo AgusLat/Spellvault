@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../css/CharacterSelector.css'
+import '../css/characterSelector.css'
 import { useCharacterContext } from '../hooks/useCharacterContext'
 import { useLoadCharacter } from '../hooks/useLoadCharacter'
 import { useAuthContext } from '../hooks/useAuthContext'
