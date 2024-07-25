@@ -12,7 +12,7 @@ export const useAddSpell = ()=>{
         setSpellLoading(true)
         setSpellError(null)
 
-        const response = await fetch('http://localhost:4000/api/profile/addspell',{
+        const response = await fetch('https://spellvault-api.vercel.app/api/profile/addspell',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
