@@ -13,7 +13,7 @@ export const useLogin = ()=> {
         setIsLoginLoading(true)
         setLoginError(null)
 
-        //CAMBIAR ANTES DE SUBIR A GITHUB "http://localhost:4000/api/user/login" 
+        //CAMBIAR ANTES DE SUBIR A GITHUB  "https://spellvault-api.vercel.app/api/user/login"
         const response = await fetch("https://spellvault-api.vercel.app/api/user/login",{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -33,7 +33,9 @@ export const useLogin = ()=> {
 
             //update authContext
             dispatch({type: 'LOGIN', payload: json})
-            setIsLoginLoading(false)
+            //LOAD characterContext
+            // charContext.dispatch({type: 'LOAD', payload: json.characters_id })
+            // setIsLoginLoading(false)
         }
     }
 

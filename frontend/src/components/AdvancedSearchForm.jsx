@@ -9,7 +9,7 @@ import { NoSearch } from './NoSearch'
 import { Loading } from './Loading'
 
 
-export const AdvancedSearchForm = ({spells}) => {
+export const AdvancedSearchForm = ({spells, hasAdd}) => {
 
     const [noSearch, setNoSearch] = useState(false)
     const [playerClass, setPlayerClass] = useState('')
@@ -17,6 +17,7 @@ export const AdvancedSearchForm = ({spells}) => {
     const [level, setLevel] = useState('')
     const [spellResults, setSpellResults] = useState(null)
     const [loading, setLoading] = useState(false)
+    const [noResults, setNoResults] = useState(false)
 
 
     const [fetchSpellAdvanced] = useAdvancedSearch()
@@ -32,9 +33,16 @@ export const AdvancedSearchForm = ({spells}) => {
 
     const handleClick = async(e)=>{
         e.preventDefault()
+        setNoResults(false)
         setNoSearch(false)
         setLoading(true)
         const results = await fetchSpellAdvanced(playerClass, school, level)
+        if(results.length === 0){
+            setSpellResults(null)
+            setNoResults(true)
+            setLoading(false)
+            return
+        }
         setLoading(false)
         setSpellResults(results)
     }
@@ -102,7 +110,8 @@ export const AdvancedSearchForm = ({spells}) => {
 
     {noSearch && <NoSearch/>}
     {loading?<Loading size={'--small'}/>:null}
-    {spellResults && <SpellList spellData={spellResults}></SpellList>}
+    {spellResults && <SpellList hasAdd={hasAdd} spellData={spellResults}></SpellList>}
+    {noResults && <p>No spells found</p>}
 
     
     </>

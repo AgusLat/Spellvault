@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 import { Schema } from 'mongoose'
 
-const spellSchema = new Schema({
+export const spellSchema = new Schema({
     name:{
         type: String,
         required: true},

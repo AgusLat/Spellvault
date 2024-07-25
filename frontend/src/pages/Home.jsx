@@ -21,6 +21,12 @@ export const Home = () => {
   const [isAdvanced, setIsAdvanced] = useState(false)
   const nodeRef = useRef(null) 
 
+  const handleClick = ()=>{
+    if (nodeRef.current) {
+      nodeRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   if(navigation.state === "loading" ){
     return <>
           <Loading/>
@@ -37,6 +43,8 @@ export const Home = () => {
           <h2 className='landing__h2'>AN ARCANE LIBRARY FOR D&D 5e</h2>
           <p className='landing__p'>"SCROLL VAULT" is a tool that was made for helping D&D players organize their spells, assign them to different characters, or just check a specific spell information in a quick way.</p>
           <p className='landing__p'>The spells that are available is a combination of the official spell list for D&D 5th edition and homebrew spells, which you can create your own or rate other people's creation.</p>
+          <div onClick={()=>{handleClick()}} className='landing__goSearch'> START YOUR SEARCH BELOW <img src='/down-arrow.svg' alt='down-arrow-icon'></img>
+          </div>
         </div>
       </div>
 

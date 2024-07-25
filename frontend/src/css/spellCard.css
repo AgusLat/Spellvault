@@ -20,25 +20,34 @@
 .spellCard{
     width: 70%;
     color: var(--text);
-    background-color: var(--secondary);
+    background-color: #21212161;
     border-radius: 0.2rem;
     border: 0.1rem solid rgba(255, 255, 255, 0.250);
     transition: all 500ms;
 }
-
+/* 
 .spellCard:hover{
-  scale: 1.02;
+  scale: 1.01;
   transition: all 500ms;
-}
+} */
 
+.spellCard__controllers{
+  display: flex;
+}
 
 .spellCard__details{
-  padding:  1rem ;
+  padding:  1rem 1rem 1rem 0.5rem;
   cursor: pointer;
-
 }
+
+.spellCard__add{
+  padding:  1rem 0.5rem 1rem 1rem;
+  justify-self: end;
+  cursor: pointer;
+}
+
 .spellCard__details-icon{
-width: 1.2rem;
+width: 1.1rem;
 }
 
 
@@ -190,6 +199,31 @@ width: 1.2rem;
   transition: opacity 500ms;
 }
 
+/* ---------------- */
+
+.arrowRotate-exit {
+  transform: rotate(0deg);
+  
+}
+.arrowRotate-exit-active {
+  transform: rotate(180deg);
+  transition: transform 300ms;
+}
+.arrowRotate-exit-done {
+  transform: rotate(180deg);
+}
+
+.arrowRotate-enter {
+  transform: rotate(180deg);
+}
+.arrowRotate-enter-active {
+  transform: rotate(0deg);
+  transition: transform 300ms;
+}
+.arrowRotate-enter-done {
+  transform: rotate(0deg);
+ 
+}
 
 
 

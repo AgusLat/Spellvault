@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'MrsEaves';
+    src: url(../fonts/Mrs\ Eaves\ Small\ Caps.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ScalaSans';
+    src: url(../fonts/Scala\ Sans.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ScalaSansLight';
+    src: url(../fonts/Scala\ Sans\ Light.otf) format('opentype');
+    font-weight: light;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ScalaSansBold';
+    src: url(../fonts/Scala\ Sans\ Bold.otf) format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ScalaSansItalic';
+    src: url(../fonts/Scala\ Sans\ Regular\ Italic.otf) format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'ScalaSansBoldItalic';
+    src: url(../fonts/Scala\ Sans\ Bold\ Italic.otf) format('opentype');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'ScalaSansSCBold';
+    src: url(../fonts/Scala\ Sans\ SC\ Bold.otf) format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}

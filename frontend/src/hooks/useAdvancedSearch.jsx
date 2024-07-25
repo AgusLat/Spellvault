@@ -12,7 +12,7 @@ export const useAdvancedSearch = (playerClass, school, level)=>{
             const response = await fetch(`https://spellvault-api.vercel.app/api/spells/filter/&${playerClass}&${school}&${level}`)
       
             const spellData = await response.json()
-            console.log(spellData) //ARRAY OF SPELLS OBJECTS
+            // console.log(spellData) //ARRAY OF SPELLS OBJECTS
             return spellData
           } catch (error) {
             console.error(error)

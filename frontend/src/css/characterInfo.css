@@ -1,0 +1,146 @@
+
+
+.characterInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-shadow: 1px 1px 2px var(--secondary);
+    margin: 1rem;
+    gap: 1rem;
+    border-radius: 0.2rem;
+    /* background: #21212161; */
+    font-size: 0.9rem;
+    padding: 1rem 1rem;
+    color: rgb(178, 201, 190);
+}
+
+.characterInfo__row{
+    margin: 0px;
+}
+
+.characterInfo__row p{
+    margin: 0px;
+   
+}
+
+.characterInfo__rowTitle{
+    color: var(--text);
+
+}
+
+.characterInfo__ul{
+    margin: 0px;
+    color: var(--text);
+    list-style: none;
+    padding: 0px;
+}
+
+.characterInfo__ul li{
+    display: flex;
+    color: rgb(178, 201, 190);
+    width: 50px;
+    justify-content: space-between;
+    
+}
+
+.characterInfo__ul span{
+    color: var(--accent);
+}
+
+.characterInfo__table{
+    font-size: 0.7rem;
+    border-collapse: collapse;
+    text-align: left;
+    border-radius: 5px;
+}
+
+
+
+.characterInfo__table-data--center{
+    color: var(--text);
+    text-align: center;
+    background-color: rgba(50, 123, 95, 0.211);
+
+    
+}
+.characterInfo__table-data--left{
+    color: rgb(178, 201, 190);
+    text-align: left;
+    
+}
+.characterInfo__table-data--right{
+    color: var(--accent);
+    text-align: center;
+    background-color: rgba(20, 54, 41, 0.3);
+}
+
+.characterInfo__table th{
+    font-size: 0.9rem;
+    color: var(--text);
+    padding-bottom: 0.3rem;
+   
+}
+
+.characterInfo__table td {
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    padding: 0.15rem 0.2rem;
+
+    
+}
+
+/* CSS TRANSITION */
+
+.appearInfo-enter {
+    opacity: 0;
+  }
+  .appearInfo-enter-active {
+    opacity: 1;
+    transition: opacity 200ms;
+  }
+  .appearInfo-exit {
+    opacity: 1;
+  }
+  .appearInfo-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
+  }
+
+
+  /* MOBILE */
+@media (max-width: 768px) {
+    .characterInfo{
+        background: #161616ef;
+        margin: 0px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1rem 2rem;
+       
+    }
+    .characterInfo__table{
+        width: 100%;
+    }
+
+    .characterInfo__table-data--left {
+        width: 32%;
+    }
+
+    .characterInfo__ul {
+       width: 100%;
+    }
+  
+    .characterInfo__ul p{
+        margin-top: 0px;
+    }
+}
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  
+} 

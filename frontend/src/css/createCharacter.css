@@ -1,0 +1,172 @@
+.createChar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+}
+
+.createChar__form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem 0rem;
+    margin-top: 2rem;
+    text-shadow: 1px 1px 2px var(--secondary);
+    width: 60%;
+}
+
+.createChar__name{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.createChar__name h1{
+    margin: 5px;
+}
+
+.createChar__classLevel{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 80%;
+}
+
+.createChar__stats{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    width: 50%;
+}
+
+.createChar__subStats{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    /* width: 35%; */
+}
+
+
+.createChar__subStats label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.createChar__button{
+    font-family: 'Philosopher', sans-serif;
+    font-weight: bold;
+    color: var(--text);
+    background-color: var(--primary);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+    text-shadow: 1px 1px 2px var(--secondary);
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+    width: 80%;
+}
+
+
+.createChar__input{
+
+
+    border-radius: 2px;
+    background:rgb(198, 255, 227);
+    color: var(--secondary);
+    border: none;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    max-width: 400px;
+}
+
+.createChar__input--sm{
+    border-radius: 2px;
+    background:rgb(198, 255, 227);
+    color: var(--secondary);
+    border: none;
+    margin: 0rem 0.5rem;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 2.5em;
+}
+
+.createChar__input:focus-visible{
+    outline: 3px solid var(--accent);
+    background-color:var(--terciary);
+}
+
+.createChar__input--sm:focus-visible{
+    outline: 3px solid var(--accent);
+    background-color:var(--terciary);
+
+
+}
+
+.createChar__success{
+    color: var(--accent);
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .createChar{
+      width: 100%;
+      padding: 1em 0em;
+  }
+
+  .createChar__form{
+    max-width: 350px;
+    justify-content: center;
+    width: 90%;
+    font-size: 0.9rem;
+  }
+
+  .createChar__classLevel{
+    justify-content: space-evenly;
+    font-size: 1rem;
+  }
+
+  .createChar__stats{
+    width: 80%;
+    justify-content: space-evenly;
+  }
+
+  .createChar__input{
+    font-size: 0.9rem;
+  }
+
+  .createChar__input--sm{
+    font-size: 0.9rem;
+  }
+
+  .createChar__button{
+    width: 90%;
+}
+
+
+}
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .createChar__form{
+        width: 60%;
+        font-size: 0.9em;
+      }
+
+    .createChar__button{
+        width: 100%;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+
+}

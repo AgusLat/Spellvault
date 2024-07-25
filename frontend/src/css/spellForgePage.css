@@ -1,9 +1,11 @@
 .spellForgePage{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     height: 90vh;
-    background-color: var(--secondary);
-    color: var(--text);
+    background-color: #0c0c0c;
+    color: #e4e4e44d;
 
 }

@@ -12,7 +12,17 @@ const userSchema = new Schema({
     password:{
         type: String,
         required: true
-    }
+    },
+    characters_id:[ 
+        {
+            _id: false,
+            charId:{
+            type: Schema.Types.ObjectId,
+            ref: 'character',
+            }
+        }
+    ]
+        
 });
 
 
@@ -65,7 +75,6 @@ userSchema.statics.login = async function(email, password){
     if (!match){
         throw Error("Incorrect password")
     }
-
     return user
 }
 

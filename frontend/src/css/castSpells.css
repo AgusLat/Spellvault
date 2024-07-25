@@ -1,0 +1,229 @@
+.spellSlotControls{
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+
+
+/*-----SlotControl component-----*/
+
+.slotControl{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: flex-start;
+    gap: 1rem;
+    align-items: center;
+    width: 70%;
+}
+
+.slotControl__controllers{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0.8rem;
+}
+
+
+.slotControl__table{
+    width: 50%;
+    border-collapse: collapse;
+    border: 1px solid rgba(255, 255, 255, 0.318);
+    text-align: center;
+    margin: 0.5rem 0rem;
+}
+
+.slotControl__table tbody td, thead td{
+    padding: 0.4rem 0.5rem;
+    /* border: 1px solid rgba(255, 255, 255, 0.318); */
+
+}
+
+.slotControl__table thead{
+    background-color: var(--secondary);
+    font-size: 0.8rem;
+}
+.slotControl__table tbody td{
+    color: var(--accent);
+}
+
+.slotControl__restore{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.slotControl__select{
+    background: var(--secondary);
+    color: var(--text);
+    border: 1px solid var(--text);
+    font-family: 'Philosopher', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0rem 0.2rem;
+    margin: 0rem 0.3rem;
+}
+
+.slotControl__btn{
+    min-width: 155px;
+    width: 100%;
+    font-family: 'Philosopher', sans-serif;
+    font-weight: bold;
+    color: var(--text);
+    background-color: var(--primary);
+    border: none;
+    padding: 0.5rem 0.5rem;
+    border-radius: 2px;
+    text-shadow: 1px 1px 2px var(--secondary);
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+}
+.slotControl__restoreBtn{
+    background-color: var(--secondary);
+    border: solid 1px var(--text);
+    color: var(--text);
+    margin: 0px 10px;
+    font-family: 'Philosopher';
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.slotControl__amountDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.slotControl__controlBtn{
+    background-color: var(--secondary);
+    border: solid 1px var(--text);
+    color: var(--text);
+    margin: 0px 10px;
+    width: 1.8em;
+    cursor: pointer;
+}
+
+
+
+
+/*-----CastControl component-----*/
+
+.spellCard__castBtn{
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+}
+
+
+.spellCard__cast-icon{
+    width: 1.5rem;
+    /* cursor: pointer; */
+}
+
+.spellCard__castControls{
+    display: flex;
+    padding: 1rem 0rem ;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.spellCard__selectSlot{
+    background: var(--secondary);
+    color: var(--text);
+    border: 1px solid var(--text);
+    font-family: 'Philosopher', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0rem 0.2rem;
+    margin: 0rem 0.3rem;
+    align-self: baseline;
+    
+}
+
+.--setPressed{
+    background-color: var(--accent);
+    color: var(--secondary);
+}
+
+.--resetPressed{
+    background-color: rgb(108, 189, 166);
+    color: var(--secondary);
+
+}
+
+
+.--rainbow {
+    animation: rainbow 2s;
+  }
+  
+
+  @keyframes rainbow {
+    0% {
+        filter: hue-rotate(360deg) drop-shadow(0px 0px 1px rgba(255, 195, 255, 0.498));
+    }
+    7% {
+      filter: hue-rotate(0deg) drop-shadow(0px 0px 2px rgb(255, 180, 180));
+    }
+    16.67% {
+      filter: hue-rotate(60deg) drop-shadow(0px 0px 3px rgb(255, 239, 209));
+    }
+    33.33% {
+      filter: hue-rotate(120deg) drop-shadow(0px 0px 3px rgb(255, 255, 194));
+    }
+    50% {
+      filter: hue-rotate(180deg) drop-shadow(0px 0px 3px rgb(197, 255, 197));
+    }
+    66.67% {
+      filter: hue-rotate(240deg) drop-shadow(0px 0px 3px rgb(200, 200, 255));
+    }
+    83.33% {
+      filter: hue-rotate(300deg) drop-shadow(0px 0px 2px rgb(232, 199, 255));
+    }
+    100% {
+      filter: hue-rotate(360deg) drop-shadow(0px 0px 1px rgba(255, 195, 255, 0.52));
+    }
+  }
+
+
+  
+
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .slotControl{
+        width: 90%;
+        flex-wrap: wrap-reverse;
+        justify-content: flex-end;
+        gap: 0.5rem;
+    }
+
+
+    .slotControl__restore{
+        justify-content: flex-end;
+    }
+
+    .slotControl__table{
+        font-size: 0.8rem;
+        max-width: 500px;
+        width: 100%;
+    }
+  
+}
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  
+} 

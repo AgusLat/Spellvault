@@ -3,7 +3,7 @@ import React from 'react'
 //COMPONENTS
 import { SpellCard } from './SpellCard'
 
-export default function SpellList({spellData}) {
+export default function SpellList({spellData, hasAdd, hasDelete, hasPrepare, hasCastControl}) {
   return (
     <div className='results'>
         <ul className='results__list'>
@@ -17,14 +17,20 @@ export default function SpellList({spellData}) {
               if (nameA > nameB) {
                 return 1;
               }
-            
               // names must be equal
               return 0;
             })
             .map(item=> {
                 return (
-                    
-                    <SpellCard key={item._id} spellId={item._id} spellData={item}></SpellCard>
+                    <SpellCard 
+                      hasAdd={hasAdd} 
+                      hasDelete={hasDelete} 
+                      hasPrepare={hasPrepare}
+                      hasCastControl={hasCastControl} 
+                      key={item._id} 
+                      spellId={item._id} 
+                      spellData={item}>
+                    </SpellCard>
                     )
                 }
             )

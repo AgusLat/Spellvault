@@ -1,0 +1,68 @@
+.mySpells{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 70%;
+    color: var(--text);
+    font-size: 1rem;
+    margin: 1rem 0rem;
+}
+
+.mySpells__quickGuide{
+ padding-inline-start: 1rem;
+ list-style: square;
+ margin: 0;
+}
+
+.mySpells__classes{
+ padding-inline-start: 0rem;
+ list-style: none;
+ font-size: 0.8rem;
+ margin: 0;
+}
+
+
+.mySpells__classes li{
+    color: rgba(255, 255, 255, 0.511);
+    font-style: italic;
+}
+
+.mySpells__classes h3{
+    list-style: none;
+    padding-inline-start: 0;
+    margin-top: 2em;
+    margin-bottom: 0.2em;
+    font-weight: bold;
+
+}
+
+.mySpells__text-icon{
+    width: 1.1rem;
+    vertical-align: text-bottom;
+    padding: 0 0.4em;
+}
+
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .mySpells{
+        width: 90%;
+        font-size: 0.9rem;
+    }
+
+    .mySpells__classes{
+        font-size: 0.7rem;
+    }
+
+}
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  
+} 

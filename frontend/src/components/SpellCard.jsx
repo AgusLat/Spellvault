@@ -1,10 +1,14 @@
 import React, { useRef, useState } from 'react'
 import { useParseString } from '../hooks/useParseString'
 import { CSSTransition } from 'react-transition-group'
+import { AddSpellBtn } from './AddSpellBtn'
+import {DeleteSpellBtn} from './DeleteSpellBtn'
+import {PrepareSpellBtn} from './PrepareSpellBtn'
+import { CastControl } from './CastControl'
 import '../css/spellCard.css'
 
 
-export const SpellCard = ({spellData, spellId}) => {
+export const SpellCard = ({spellData, spellId, hasAdd, hasDelete, hasPrepare, hasCastControl}) => {
   
   //Parses <p></p> tags from strings in spell description property
   const [parseString] = useParseString()
@@ -12,6 +16,7 @@ export const SpellCard = ({spellData, spellId}) => {
   //CSS TRANSITION
   const [cardBody, setCardBody] = useState(true)
   const nodeRef = useRef(null)
+  const arrowRef = useRef(null)
   
 
   return (
@@ -21,7 +26,7 @@ export const SpellCard = ({spellData, spellId}) => {
         <header className='spellCard__header'>
           <div className='spellCard__title'>
             <div className='spellCard__name'>
-            <img  className='spellCard__icon' src={`./${spellData.school}.png`} alt="" />
+            <img  className='spellCard__icon' src={`/${spellData.school}.png`} alt="" />
             <h2> {spellData.name}  </h2>
            </div>
             
@@ -33,9 +38,17 @@ export const SpellCard = ({spellData, spellId}) => {
               </dfn>
             </div>
           </div>
-              <div className='spellCard__details' onClick={()=> cardBody?setCardBody(false):setCardBody(true)}>
-                <img className='spellCard__details-icon' src='/unfold-more.svg' ></img>
-              </div>
+          <div className='spellCard__controllers'>
+            {hasCastControl && <CastControl spellData={spellData} />}
+            {hasDelete && <DeleteSpellBtn spellData={spellData} />}
+            {hasPrepare && <PrepareSpellBtn spellData={spellData} />}
+            {hasAdd && <AddSpellBtn spellData={spellData} />}
+            <div className='spellCard__details' onClick={()=> cardBody?setCardBody(false):setCardBody(true)}>
+              <CSSTransition in={cardBody} nodeRef={arrowRef} classNames='arrowRotate' timeout={300}>
+                <img ref={arrowRef} className='spellCard__details-icon' src='/arrow.svg' ></img>
+              </CSSTransition>
+            </div>
+          </div>
         </header>
 
         <CSSTransition nodeRef={nodeRef} in={cardBody} timeout={500} appear={true} classNames="showSpellCardBody">
