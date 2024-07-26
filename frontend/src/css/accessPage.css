@@ -154,6 +154,11 @@ text-align: center;
 
 }
 
+.registerForm__termsAndConditions:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .registerForm__error{
     display: flex;
     justify-content: center;

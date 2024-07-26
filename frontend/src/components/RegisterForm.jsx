@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useSignup } from '../hooks/useSignup'
 import { useLogin } from '../hooks/useLogin'
 import '../css/accessPage.css'
+import { TermsAndConditions } from './TermsAndConditions'
 
 
 export const RegisterForm = () => {
@@ -10,6 +11,7 @@ export const RegisterForm = () => {
   const[email, setEmail] = useState('');
   const[password, setPassword] = useState('');
   const[accessType, setAccessType] = useState('SIGNUP')
+  const [showModal, setShowModal] = useState(false)
 
 
   //HOOKS
@@ -26,6 +28,10 @@ export const RegisterForm = () => {
     if(accessType=='LOGIN'){
       await login(email,password)
     }
+  }
+
+  const showTerms =()=>{
+    setShowModal(!showModal)
   }
 
 
@@ -59,8 +65,8 @@ export const RegisterForm = () => {
 
             {(accessType == 'SIGNUP') &&
                 <div className='registerForm__inputWrapper'>
-                    <label htmlFor="">
-                      Terms and conditions <input name='termsAndCon' type="checkbox"  />
+                    <label className='registerForm__termsAndConditions'>
+                      <a onClick={()=>{showTerms()}} >Terms and conditions</a> <input name='termsAndCon' type="checkbox" required  />
                     </label>
                 </div>
             }
@@ -73,6 +79,14 @@ export const RegisterForm = () => {
           {signupError && accessType=='SIGNUP'? <div>{signupError}</div>: null}
           {loginError && accessType=='LOGIN'?  <div>{loginError}</div>: null}
         </div>
+        {showModal && 
+          <div className='termsAndConditions'>
+            <div className='termsAndConditions__title'>
+              Terms and Conditions of Spellvault 
+              <button className='termsAndConditions__closeBtn' onClick={()=>{setShowModal()}}> X </button>
+            </div>
+            <TermsAndConditions />
+          </div>}
     </div>
   )
 }
