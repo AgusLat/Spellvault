@@ -15,7 +15,9 @@ const port = process.env.PORT
 //parses "req" to json
 app.use(express.json())
 //avoid cors errors
-app.use(cors())
+app.use(cors({
+     origin: 'https://spellvault-lovat.vercel.app'
+}))
 //logs user requests
 app.use( (req, res, next) => {
     console.log(req.path, req.method)
