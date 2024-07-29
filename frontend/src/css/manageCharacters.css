@@ -100,6 +100,7 @@ margin: 0px 0.2rem;
     text-shadow: 1px 1px 2px var(--secondary);
     cursor: pointer;
     letter-spacing: 0.1rem;
+    transition: all 100ms ease-in-out;
 }
 
 .manageCharacters__control{
@@ -113,9 +114,13 @@ margin: 0px 0.2rem;
 
 .manageCharacters__confirm{
     display: none;
-    color: var(--accent);
+    color: rgb(198, 255, 227);
 }
 
+.--disabledBtn{
+    background-color:rgb(198, 255, 227);
+    color: var(--secondary);
+}
 
 /*----------- CSS-TRANSITION---------- */
 
@@ -128,13 +133,13 @@ margin: 0px 0.2rem;
     display: flex;
     opacity: 1;
     top: 80px;
-    transition: top 500ms, opacity 500ms ease-in-out;
+    transition: top 150ms, opacity 150ms ease-in-out;
   }
   .manageCharacters__confirm-enter-done {
     display: flex;
     opacity: 1;
     top: 80px;
-    transition: top 500ms, opacity 500ms ease-in-out;
+    transition: top 150ms, opacity 150ms ease-in-out;
   }
   .manageCharacters__confirm-exit {
     display: flex;
@@ -145,13 +150,13 @@ margin: 0px 0.2rem;
     display: flex;
     opacity: 0;
     top: 800px;
-    transition: top  500ms, opacity 500ms ease-in-out;
+    transition: top  150ms, opacity 150ms ease-in-out;
   }
   .manageCharacters__confirm-exit-done {
     display: none;
     opacity: 0;
     top: 800px;
-    transition: top  500ms, opacity 500ms ease-in-out;
+    transition: top  150ms, opacity 150ms ease-in-out;
   }
 
 

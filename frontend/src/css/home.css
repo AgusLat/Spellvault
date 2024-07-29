@@ -67,6 +67,11 @@ background: linear-gradient(0deg, rgba(0, 0, 0, 0.8015581232492998) 0%, rgba(0, 
   margin-top: 2.1rem;
 }
 
+.--goSearchPressed{
+  background-color: rgba(128, 128, 128, 0.405);
+
+}
+
 .landing__goSearch img{
   width: 1.2rem;
   padding-left: 1rem;

@@ -111,7 +111,16 @@
 }
 
 .createChar__success{
-    color: var(--accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: rgb(198, 255, 227);
+}
+
+.--createCharDisabled{
+    background-color:rgb(198, 255, 227);
+    color: var(--secondary);
 }
 
 

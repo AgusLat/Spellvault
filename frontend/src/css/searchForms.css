@@ -77,11 +77,12 @@
     transition: all 200ms;
 }
 
-.quickSearch__btn:hover{
+.--searchPressed{
     background-color: var(--terciary);
     color: var(--secondary);
-
 }
+
+
 
 .quickSearch__dropdown-ul{
     flex-direction: column;

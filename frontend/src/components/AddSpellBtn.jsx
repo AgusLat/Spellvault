@@ -15,6 +15,8 @@ export const AddSpellBtn = ({spellData}) => {
   const {loadCharList, isLoadingList, loadListError} = useLoadCharList()
   //USE-STATE
   const [isKnown, setIsknown] = useState('')
+  const [ isPressed, setIsPressed] = useState(false)
+
 
   const handleClick = async ()=>{
 
@@ -37,7 +39,15 @@ export const AddSpellBtn = ({spellData}) => {
 
 
   return (
-    <div onClick={()=>{handleClick()}} className='spellCard__add'>
+    <div 
+      className={'spellCard__add' + (isPressed? ' --addPressed': '')}
+      onTouchStart={()=>{setIsPressed(true)}}
+      onTouchEnd={()=>{setIsPressed(false)}}
+      onMouseDown={()=>{setIsPressed(true)}}
+      onMouseUp={()=>{setIsPressed(false)}}
+      onClick={()=>{handleClick()}} 
+    >
+        {spellLoading && <img className='spellCard__details-loading-icon' src='/loading.svg'></img>}
         <img className={`spellCard__details-icon ${isKnown}`} src='/add.svg' ></img>
     </div>
   )

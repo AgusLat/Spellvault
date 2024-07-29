@@ -20,13 +20,14 @@ export const QuickSearchForm = ({spells, count}) => {
     const [ searchError, setSearchError ]       = useState(false)
     const [loading, setLoading]                 = useState(false)
     const [ noSearch, setNoSearch ]             = useState(false)
+    const [ isPressed, setIsPressed]            = useState(false)
     const [ fetchSpell ]                        = useSpellSearch()
+
 
 
     useEffect(() => {
       
       setNoSearch(true)
-
 
     }, [])
     
@@ -34,6 +35,7 @@ export const QuickSearchForm = ({spells, count}) => {
 
     const handleSearch = async (spellName)=>{
 
+      setSpellCardData(null)
       setLoading(true)
 
         const list = spells.map((item) => {
@@ -75,7 +77,13 @@ export const QuickSearchForm = ({spells, count}) => {
 
       <form className='quickSearch__form' onSubmit={(e)=>e.preventDefault()}>
         <input className='quickSearch__input' onChange={(e)=>setsearchBarInput(e.target.value)} value={searchBarInput} type="search" />
-        <button className='quickSearch__btn' onClick={()=>handleSearch(searchBarInput)}>SEARCH</button>
+        <button 
+          className={'quickSearch__btn' + (isPressed? ' --searchPressed': '')}
+          onTouchStart={()=>{setIsPressed(true)}}
+          onTouchEnd={()=>{setIsPressed(false)}}
+          onMouseDown={()=>{setIsPressed(true)}}
+          onMouseUp={()=>{setIsPressed(false)}}
+          onClick={()=>handleSearch(searchBarInput)}>SEARCH</button>
       </form>
 
       <ul className='quickSearch__dropdown-ul'>

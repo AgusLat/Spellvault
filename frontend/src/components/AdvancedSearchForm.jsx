@@ -11,13 +11,15 @@ import { Loading } from './Loading'
 
 export const AdvancedSearchForm = ({spells, hasAdd}) => {
 
-    const [noSearch, setNoSearch] = useState(false)
-    const [playerClass, setPlayerClass] = useState('')
-    const [school, setSchool] = useState('')
-    const [level, setLevel] = useState('')
+    const [noSearch, setNoSearch]         = useState(false)
+    const [playerClass, setPlayerClass]   = useState('')
+    const [school, setSchool]             = useState('')
+    const [level, setLevel]               = useState('')
     const [spellResults, setSpellResults] = useState(null)
-    const [loading, setLoading] = useState(false)
-    const [noResults, setNoResults] = useState(false)
+    const [loading, setLoading]           = useState(false)
+    const [noResults, setNoResults]       = useState(false)
+    const [ isPressed, setIsPressed]      = useState(false)
+
 
 
     const [fetchSpellAdvanced] = useAdvancedSearch()
@@ -104,7 +106,17 @@ export const AdvancedSearchForm = ({spells, hasAdd}) => {
                 </select>
             </div>
             </div>
-            <button type='submit' onClick={(e)=>handleClick(e)} className='quickSearch__btn'>SEARCH</button>
+            <button 
+                type='submit' 
+                className={'quickSearch__btn'  + (isPressed? ' --searchPressed': '')}
+                onTouchStart={()=>{setIsPressed(true)}}
+                onTouchEnd={()=>{setIsPressed(false)}}
+                onMouseDown={()=>{setIsPressed(true)}}
+                onMouseUp={()=>{setIsPressed(false)}}
+                onClick={(e)=>handleClick(e)} 
+                >
+                    SEARCH
+            </button>
         </form>
     </div>
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useCharacterContext } from '../hooks/useCharacterContext'
 import { useAuthContext } from '../hooks/useAuthContext'
 import { useDeleteSpell } from '../hooks/useDeleteSpell'
@@ -12,6 +12,9 @@ export const DeleteSpellBtn = ({spellData}) => {
   //HOOKS
   const { deleteSpell, deleteSpellLoading, deleteSpellError } = useDeleteSpell()
   const { loadCharList, isLoadingList, loadListError } = useLoadCharList()
+  //USE-STATE
+  const [ isPressed, setIsPressed] = useState(false)
+  
 
   const handleClick = async()=>{
 
@@ -28,7 +31,15 @@ export const DeleteSpellBtn = ({spellData}) => {
 
 
   return (
-    <div onClick={()=>{handleClick()}} className='spellCard__add'>
+    <div 
+      className={'spellCard__add' + (isPressed? ' --deletePressed': '')}
+      onTouchStart={()=>{setIsPressed(true)}}
+      onTouchEnd={()=>{setIsPressed(false)}}
+      onMouseDown={()=>{setIsPressed(true)}}
+      onMouseUp={()=>{setIsPressed(false)}}
+      onClick={()=>{handleClick()}} 
+    >
+        {deleteSpellLoading && <img className='spellCard__details-loading-icon' src='/loading.svg'></img>}
         <img className='spellCard__details-icon' src='/delete.svg' ></img>
     </div>
   )

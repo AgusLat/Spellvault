@@ -50,6 +50,10 @@
 width: 1.1rem;
 }
 
+.spellCard__details-loading-icon{
+  width: 1.1rem;
+  margin-right: 0.5rem;
+  }
 
 .spellCard__header{
     display: flex;
@@ -155,6 +159,20 @@ width: 1.1rem;
   justify-content: flex-end;
   align-items: center;
   padding: 0 1rem 1rem 0;
+}
+
+
+.--addPressed{
+  filter: brightness(0) saturate(100%) invert(94%) sepia(14%) saturate(398%) hue-rotate(102deg) brightness(89%) contrast(88%);
+  scale: 1.1;
+}
+
+.--deletePressed{
+  scale: 1.1;
+}
+
+.preparePressed{
+  scale: 1.1;
 }
 
 /* CSS TRANSITION */

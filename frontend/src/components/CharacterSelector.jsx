@@ -22,11 +22,14 @@ export const CharacterSelector = ({charName, charId}) => {
         <div className='characterSelector'>
           <p className='characterSelector__name'>{charName}</p>
           <button disabled={isLoading} onClick={()=>{handleClick()}}>
-          <img className={
+            {isLoading?
+            <img className='characterSelector__icon --active' src='/loading.svg'></img> :
+            <img className={
             `characterSelector__icon ${
               state.activeCharacter === null? '':
               (state.activeCharacter._id === charId?' --active':'')}`
-          } src="/scroll-papyrus.svg" alt="magic-book" />
+          } src="/scroll-papyrus.svg" alt="magic-book" />}
+          
           </button>
           {loadError && <p>{loadError}</p>}
         </div>

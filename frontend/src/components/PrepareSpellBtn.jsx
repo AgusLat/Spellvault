@@ -16,6 +16,8 @@ export const PrepareSpellBtn = ({spellData}) => {
   const {loadCharList, isLoadingList, loadListError} = useLoadCharList()
   //USE-STATE
   const [prepared, setPrepared] = useState(null)
+  const [ isPressed, setIsPressed] = useState(false)
+
 
   const isPrepared = state.activeCharacter.spellData.preparedSpells.some((spell)=> spell._id === spellData._id)
 
@@ -59,8 +61,15 @@ export const PrepareSpellBtn = ({spellData}) => {
     }
 
   return (
-    <div onClick={()=>{handleClick()}} className='spellCard__add'>
-        <img className={`spellCard__details-icon ${prepared? '--prepared':null}`} src='/open-book.svg' ></img>
+    <div 
+      className={'spellCard__add' + (isPressed? ' --addPressed': '')}
+      onTouchStart={()=>{setIsPressed(true)}}
+      onTouchEnd={()=>{setIsPressed(false)}}
+      onMouseDown={()=>{setIsPressed(true)}}
+      onMouseUp={()=>{setIsPressed(false)}}
+      onClick={()=>{handleClick()}}
+      >
+      <img className={`spellCard__details-icon ${prepared? '--prepared':null}`} src='/open-book.svg' ></img>
     </div>
   )
 }

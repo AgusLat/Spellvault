@@ -110,9 +110,11 @@ export const CreateCharacter = () => {
             <label>CHA <input className='createChar__input--sm' type='number' min="1" max="20" onChange={(e)=>{setChaStat(e.target.value)}} required></input></label>
           </div>
         </div>
-        <button className='createChar__button' disabled={isLoading}>CREATE CHARACTER</button>
+        <button
+          className={'createChar__button' + (isLoading?' --createCharDisabled':'')}
+          disabled={isLoading}>CREATE CHARACTER</button>
         {createCharError?<p>{createCharError}</p>:null}
-        {isSuccesful?<p className='createChar__success'>Character created succesfully</p>:null}
+        {isSuccesful?<div className='createChar__success'>Character created succesfully</div>:null}
 
       </form>
     </div>

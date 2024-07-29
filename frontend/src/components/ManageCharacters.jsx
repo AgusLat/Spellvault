@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import '../css/manageCharacters.css'
+import { ControlButton } from './ControlButton'
 import { useDeleteCharacter} from '../hooks/useDeleteCharacter'
 import { useAuthContext } from '../hooks/useAuthContext'
 import { useCharacterContext } from '../hooks/useCharacterContext'
@@ -32,6 +33,7 @@ export const ManageCharacters = () => {
   const [ confirmation, setConfirmation] = useState(false)
 
 
+
   useEffect(() => {
     if (state.activeCharacter) {
       setCharLevel(state.activeCharacter.level)
@@ -42,6 +44,7 @@ export const ManageCharacters = () => {
       setWis(state.activeCharacter.stats.WIS)
       setCha(state.activeCharacter.stats.CHA)
     }
+
   }, [state.activeCharacter])
 
 
@@ -113,18 +116,16 @@ export const ManageCharacters = () => {
                 <span>Class: {state.activeCharacter.charClass.charAt(0).toUpperCase() + state.activeCharacter.charClass.slice(1)}</span>
                 <div className='manageCharacters__levelDiv'>Level: <span className='manageCharacters__stat'>{charLevel}</span> 
                   <div className='manageCharacters__controlDiv'>
-                    <button 
-                      className='manageCharacters__control'
+                    <ControlButton 
                       disabled={charLevel <= 1? true: false} 
                       onClick={()=>setCharLevel(charLevel-1)}>
                         -
-                    </button> 
-                    <button 
-                      className='manageCharacters__control' 
+                    </ControlButton> 
+                    <ControlButton      
                       disabled={charLevel >= 20? true: false} 
                       onClick={()=>setCharLevel(charLevel+1)}>
                       +
-                    </button>
+                    </ControlButton>
                   </div>
                 </div>
               </div>
@@ -136,8 +137,8 @@ export const ManageCharacters = () => {
                       STR: <span className='manageCharacters__stat'>{str}</span>
                     </div>
                     <div className='manageCharacters__controlDiv'>
-                      <button className='manageCharacters__control' disabled={str <= 1? true: false} onClick={()=>setStr(str-1)}>-</button>
-                      <button className='manageCharacters__control' disabled={str >= 20? true: false} onClick={()=>setStr(str+1)}>+</button>
+                      <ControlButton disabled={str <= 1? true: false} onClick={()=>setStr(str-1)}>-</ControlButton>
+                      <ControlButton disabled={str >= 20? true: false} onClick={()=>setStr(str+1)}>+</ControlButton>
                     </div>
                   </div>
                   <div className='manageCharacters__row'>
@@ -145,8 +146,8 @@ export const ManageCharacters = () => {
                       DEX: <span className='manageCharacters__stat'>{dex}</span>
                     </div>
                     <div className='manageCharacters__controlDiv'>
-                      <button className='manageCharacters__control' disabled={dex <= 1? true: false} onClick={()=>setDex(dex-1)}>-</button>
-                      <button className='manageCharacters__control' disabled={dex >= 20? true: false} onClick={()=>setDex(dex+1)}>+</button>
+                      <ControlButton disabled={dex <= 1? true: false} onClick={()=>setDex(dex-1)}>-</ControlButton>
+                      <ControlButton disabled={dex >= 20? true: false} onClick={()=>setDex(dex+1)}>+</ControlButton>
                     </div>
                   </div>
                   <div className='manageCharacters__row'>
@@ -154,8 +155,8 @@ export const ManageCharacters = () => {
                       CON: <span className='manageCharacters__stat'>{con}</span>
                     </div>
                     <div className='manageCharacters__controlDiv'>
-                      <button className='manageCharacters__control' disabled={con <= 1? true: false} onClick={()=>setCon(con-1)}>-</button>
-                      <button className='manageCharacters__control' disabled={con >= 20? true: false} onClick={()=>setCon(con+1)}>+</button>
+                      <ControlButton disabled={con <= 1? true: false} onClick={()=>setCon(con-1)}>-</ControlButton>
+                      <ControlButton disabled={con >= 20? true: false} onClick={()=>setCon(con+1)}>+</ControlButton>
                     </div>
                   </div>
                   <div className='manageCharacters__row'>
@@ -163,8 +164,8 @@ export const ManageCharacters = () => {
                       INT: <span className='manageCharacters__stat'>{int}</span>
                     </div>
                     <div className='manageCharacters__controlDiv'>
-                      <button className='manageCharacters__control' disabled={int <= 1? true: false} onClick={()=>setInt(int-1)}>-</button>
-                      <button className='manageCharacters__control' disabled={int >= 20? true: false} onClick={()=>setInt(int+1)}>+</button>
+                      <ControlButton disabled={int <= 1? true: false} onClick={()=>setInt(int-1)}>-</ControlButton>
+                      <ControlButton disabled={int >= 20? true: false} onClick={()=>setInt(int+1)}>+</ControlButton>
                     </div>
                   </div>
                   <div className='manageCharacters__row'>
@@ -172,8 +173,8 @@ export const ManageCharacters = () => {
                       WIS: <span className='manageCharacters__stat'>{wis}</span>
                     </div>
                     <div className='manageCharacters__controlDiv'>
-                      <button className='manageCharacters__control' disabled={wis <= 1? true: false} onClick={()=>setWis(wis-1)}>-</button>
-                      <button className='manageCharacters__control' disabled={wis >= 20? true: false} onClick={()=>setWis(wis+1)}>+</button>
+                      <ControlButton disabled={wis <= 1? true: false} onClick={()=>setWis(wis-1)}>-</ControlButton>
+                      <ControlButton disabled={wis >= 20? true: false} onClick={()=>setWis(wis+1)}>+</ControlButton>
                     </div>
                   </div>
                   <div className='manageCharacters__row'>
@@ -181,14 +182,24 @@ export const ManageCharacters = () => {
                       CHA: <span className='manageCharacters__stat'>{cha}</span>
                     </div>
                     <div className='manageCharacters__controlDiv'>
-                      <button className='manageCharacters__control' disabled={cha <= 1? true: false} onClick={()=>setCha(cha-1)}>-</button>
-                      <button className='manageCharacters__control' disabled={cha >= 20? true: false} onClick={()=>setCha(cha+1)}>+</button>
+                      <ControlButton disabled={cha <= 1? true: false} onClick={()=>setCha(cha-1)}>-</ControlButton>
+                      <ControlButton disabled={cha >= 20? true: false} onClick={()=>setCha(cha+1)}>+</ControlButton>
                     </div>
                 </div>
               </div>
             </div>
-            <button disabled={isEditLoading} className='manageCharacters__button' onClick={()=>handleClick('edit')}> SAVE EDIT </button>
-            <button disabled={isLoading} className='manageCharacters__button' onClick={()=>handleClick('delete')}> DELETE CHARACTER </button>
+            <button 
+              disabled={isEditLoading} 
+              className={'manageCharacters__button' + (isEditLoading?' --disabledBtn':'')} 
+              onClick={()=>handleClick('edit')}> 
+              SAVE EDIT 
+            </button>
+            <button 
+              disabled={isLoading} 
+              className={'manageCharacters__button' + (isLoading?' --disabledBtn':'')} 
+              onClick={()=>handleClick('delete')}> 
+              DELETE CHARACTER 
+              </button>
             <CSSTransition in={confirmation} nodeRef={confirmRef} timeout={500} classNames='manageCharacters__confirm'>
               <div  className='manageCharacters__confirm' ref={confirmRef}>
                 <p>CHARACTER EDITED CORRECTLY</p>
@@ -196,7 +207,6 @@ export const ManageCharacters = () => {
             </CSSTransition>
           </>
         }
-      {isLoading&& <p>LOADING...</p>}
       {deleteError&& <p>{deleteError}</p>}
       {editError&& <p>{editError}</p>}
     </div>
