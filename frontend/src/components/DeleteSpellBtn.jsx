@@ -39,8 +39,9 @@ export const DeleteSpellBtn = ({spellData}) => {
       onMouseUp={()=>{setIsPressed(false)}}
       onClick={()=>{handleClick()}} 
     >
-        {deleteSpellLoading && <img className='spellCard__details-loading-icon' src='/loading.svg'></img>}
+        {deleteSpellLoading ? <img className='spellCard__details-loading-icon' src='/loading.svg'></img>:
         <img className='spellCard__details-icon' src='/delete.svg' ></img>
+        }
     </div>
   )
 }

@@ -105,16 +105,16 @@
 
     }
     .nav__a{
-        font-size: 1.2rem;
+        font-size: 1rem;
 
     }
     .nav__menu{
         flex-direction: column;
         align-items: flex-end;
         position: absolute;
-       height: 90vh;
-       top: 10vh;
-       right: 0;
+        height: 90vh;
+        top: 10vh;
+        right: 0;
      
        /* background-color: rgba(0, 0, 0, 0.357); */
     }
@@ -156,7 +156,6 @@
         width: 5.5rem;
         margin: 0.3rem;
         padding: 1rem;
-        border-bottom: solid 2px var(--text) ;
     }
   }
 

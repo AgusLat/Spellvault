@@ -47,8 +47,9 @@ export const AddSpellBtn = ({spellData}) => {
       onMouseUp={()=>{setIsPressed(false)}}
       onClick={()=>{handleClick()}} 
     >
-        {spellLoading && <img className='spellCard__details-loading-icon' src='/loading.svg'></img>}
+        {spellLoading ? <img className='spellCard__details-loading-icon' src='/loading.svg'></img>:
         <img className={`spellCard__details-icon ${isKnown}`} src='/add.svg' ></img>
+      }
     </div>
   )
 }
