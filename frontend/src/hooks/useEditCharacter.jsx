@@ -13,7 +13,7 @@ export const useEditCharacter = ()=>{
 
         setIsEditLoading(true)
 
-        const response = await fetch('https://spellvault-api.vercel.app/api/profile/editcharacter', {
+        const response = await fetch('https://spellvault-api.onrender.com/api/profile/editcharacter', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

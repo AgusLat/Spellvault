@@ -12,7 +12,7 @@ export const usePrepareSpell = ()=>{
         setPrepareSpellLoading(true)
         setPrepareSpellError(null)
 
-        const response = await fetch('https://spellvault-api.vercel.app/api/profile/preparespell',{
+        const response = await fetch('https://spellvault-api.onrender.com/api/profile/preparespell',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

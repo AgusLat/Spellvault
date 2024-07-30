@@ -12,8 +12,8 @@ export const useCreateCharacter = ()=>{
 
         setIsLoading(true)
         setCreateCharError(null)
-       //CAMBIAR URL CUANDO SE SUBA A GITHUB "https://spellvault-api.vercel.app/api/profile/createcharacter"
-        const response = await fetch ('https://spellvault-api.vercel.app/api/profile/createcharacter',{
+       //CAMBIAR URL CUANDO SE SUBA A GITHUB "https://spellvault-api.onrender.com/api/profile/createcharacter"
+        const response = await fetch ('https://spellvault-api.onrender.com/api/profile/createcharacter',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

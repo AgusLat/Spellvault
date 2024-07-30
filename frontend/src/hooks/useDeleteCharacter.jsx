@@ -12,8 +12,8 @@ export const useDeleteCharacter = ()=>{
 
         setIsLoading(true)
 
-        //CAMBIAR URL CUANDO SE SUBA A GITHUB "https://spellvault-api.vercel.app/api/profile/deletecharacter"
-        const response = await fetch('https://spellvault-api.vercel.app/api/profile/deletecharacter', {
+        //CAMBIAR URL CUANDO SE SUBA A GITHUB "https://spellvault-api.onrender.com/api/profile/deletecharacter"
+        const response = await fetch('https://spellvault-api.onrender.com/api/profile/deletecharacter', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

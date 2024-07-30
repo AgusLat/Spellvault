@@ -13,8 +13,8 @@ export const useSignup = ()=> {
         setIsSignupLoading(true)
         setSignupError(null)
 
-        //CAMBIAR ANTES DE SUBIR A GITHUB  "https://spellvault-api.vercel.app/api/user/signup"
-        const response = await fetch("https://spellvault-api.vercel.app/api/user/signup",{
+        //CAMBIAR ANTES DE SUBIR A GITHUB  "https://spellvault-api.onrender.com/api/user/signup"
+        const response = await fetch("https://spellvault-api.onrender.com/api/user/signup",{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({email, password})

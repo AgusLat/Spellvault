@@ -86,7 +86,7 @@ export const Home = () => {
 export const homeLoader = async () => {
   try {
       //ROUTE CAN BE MODIFIED TO 'http://localhost:4000/api/spells'
-      const response = await fetch("https://spellvault-api.vercel.app/api/spells/") 
+      const response = await fetch("https://spellvault-api.onrender.com/api/spells/") 
 
       const data = await response.json()
       // console.log("LOADER DATA", {count: data.length, spells: data})

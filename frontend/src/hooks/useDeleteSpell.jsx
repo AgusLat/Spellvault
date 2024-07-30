@@ -12,7 +12,7 @@ export const useDeleteSpell = ()=>{
         setDeleteSpellLoading(true)
         setDeleteSpellError(null)
 
-        const response = await fetch('https://spellvault-api.vercel.app/api/profile/deletespell',{
+        const response = await fetch('https://spellvault-api.onrender.com/api/profile/deletespell',{
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

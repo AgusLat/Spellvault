@@ -15,8 +15,8 @@ export const useLoadCharList = ()=>{
 
         setIsLoadingList(true)
 
-        //CAMBIAR URL CUANDO SE SUBA A GITHUB "https://spellvault-api.vercel.app/api/profile/loadcharacter"
-        const response = await fetch('https://spellvault-api.vercel.app/api/profile/loadcharacterlist', {
+        //CAMBIAR URL CUANDO SE SUBA A GITHUB "https://spellvault-api.onrender.com/api/profile/loadcharacter"
+        const response = await fetch('https://spellvault-api.onrender.com/api/profile/loadcharacterlist', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

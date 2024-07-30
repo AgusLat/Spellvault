@@ -10,7 +10,7 @@ export const useUpdateSlots = ()=>{
         setUpdateSlotLoading(true)
         setUpdateSlotError(null)
 
-        const response = await fetch('https://spellvault-api.vercel.app/api/profile/updateslots',{
+        const response = await fetch('https://spellvault-api.onrender.com/api/profile/updateslots',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
