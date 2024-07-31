@@ -1,6 +1,7 @@
 import 'dotenv/config';
-import cors from 'cors';
 import express  from "express";
+import cors from 'cors';
+import cron from 'node-cron'
 import { router as spellRoutes } from './routes/spells.js';
 import { router as userRoutes } from './routes/users.js';
 import {router as profileRoutes} from './routes/profile.js';
@@ -43,4 +44,17 @@ connectDb()
 
 app.listen(port, ()=>{
     console.log('Server listening on port', port)
+})
+
+
+
+cron.schedule('*/14 * * * *', async()=>{
+   const response = await fetch('https://spellvault-api.onrender.com/')
+   const json = await response.json()
+   if(response.ok){
+    console.log("Server running...")
+   }
+   if(!response.ok){
+    console.log(json.error)
+   }
 })
