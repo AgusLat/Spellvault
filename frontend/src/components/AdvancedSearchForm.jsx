@@ -106,6 +106,7 @@ export const AdvancedSearchForm = ({spells, hasAdd}) => {
                 </select>
             </div>
             </div>
+            
             <button 
                 type='submit' 
                 className={'quickSearch__btn'  + (isPressed? ' --searchPressed': '')}
@@ -118,6 +119,11 @@ export const AdvancedSearchForm = ({spells, hasAdd}) => {
                     SEARCH
             </button>
         </form>
+        <span className='quickSearch__help'>
+          *Ritual or concentration
+          <b className='spellCard__ritualConcentration'>R</b>
+          <b className='spellCard__ritualConcentration'>C</b>
+      </span>  
     </div>
 
     {noSearch && <NoSearch/>}

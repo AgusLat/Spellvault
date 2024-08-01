@@ -19,6 +19,10 @@
     width: 41%;
 }
 
+.manageCharacters__dataDiv h1{
+    font-family: 'MrEaves';
+}
+
 .manageCharacters__statsDiv{
     display: flex;
     flex-wrap: wrap;
@@ -182,6 +186,7 @@ margin: 0px 0.2rem;
     
     .manageCharacters__statsDiv{
         width: 50%;
+        border-top: 1px solid #808080a6;
     }
     
 

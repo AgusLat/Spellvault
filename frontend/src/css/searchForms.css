@@ -26,6 +26,12 @@
     width: 100%;
 }
 
+.quickSearch__help{
+    color: rgba(238, 238, 238, 0.362);
+    font-size: 0.7rem;
+    padding-top: 1rem;
+}
+
 
 .quickSearch__form{
     display: flex;
@@ -60,7 +66,7 @@
 .quickSearch__btn{
     margin-left: 0.3rem;
     /* font-family: 'Philosopher', sans-serif; */
-    font-size: 1.2rem;
+    font-size: 1rem;
     align-self: flex-end;
     font-family: 'ScalaSans-bolder';
     font-weight: bold;
@@ -149,6 +155,7 @@ margin: 20px 20px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'ScalaSans-bolder';
 }
 .advancedSearch__options label{
     font-weight: bold;

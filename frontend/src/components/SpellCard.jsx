@@ -33,8 +33,10 @@ export const SpellCard = ({spellData, spellId, hasAdd, hasDelete, hasPrepare, ha
             <div className='spellCard__subtitle'>
               <dfn>
                 <b>{`${spellData.school} - ${spellData.level} `}</b>
-                <b>{spellData.ritual?"| Ritual ":null}</b>
-                <b>| Classes - {spellData.class}</b>
+                {spellData.ritual&&<b className='spellCard__ritualConcentration'>R</b>}
+                {spellData.concentration&&<b className='spellCard__ritualConcentration'>C</b>}
+
+                <b> - Classes: {spellData.class}</b>
               </dfn>
             </div>
           </div>

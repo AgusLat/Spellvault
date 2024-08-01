@@ -73,9 +73,10 @@ export const QuickSearchForm = ({spells, count}) => {
     <>
     <div className='quickSearch'>
    
-      <h3>Amount of spells in the vault: {count}</h3>
-
+      <h3>Amount of spells in the vault: {count} </h3>
+      
       <form className='quickSearch__form' onSubmit={(e)=>e.preventDefault()}>
+        
         <input className='quickSearch__input' onChange={(e)=>setsearchBarInput(e.target.value)} value={searchBarInput} type="search" />
         <button 
           className={'quickSearch__btn' + (isPressed? ' --searchPressed': '')}
@@ -101,7 +102,11 @@ export const QuickSearchForm = ({spells, count}) => {
             )
           }
       </ul>
-
+      <span className='quickSearch__help'>
+          *Ritual or concentration
+          <b className='spellCard__ritualConcentration'>R</b>
+          <b className='spellCard__ritualConcentration'>C</b>
+      </span>  
       <div className='spellCard-container'>
         {loading?<Loading size={'--small'}/>:null}
         {searchError && <div className='spellCard-container__no-matches'><h3>No coincidences</h3></div>}

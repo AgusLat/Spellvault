@@ -28,11 +28,13 @@
     border: 0.1rem solid rgba(255, 255, 255, 0.250);
     transition: all 500ms;
 }
-/* 
-.spellCard:hover{
-  scale: 1.01;
-  transition: all 500ms;
-} */
+
+.spellCard__ritualConcentration{
+  color: rgb(182, 240, 182);
+  padding: 0rem 0.2rem;
+  background-color: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(71, 71, 71, 0.47);
+}
 
 .spellCard__controllers{
   display: flex;
