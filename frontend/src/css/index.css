@@ -12,6 +12,59 @@
 
 }
 
+@font-face {
+  font-family: 'ScalaSans';
+  src: url('../fonts/Scala-Sans.otf') format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ScalaSans-it';
+  src: url('../fonts/Scala-Sans-Regular-Italic.otf') format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ScalaSans-li';
+  src: url('../fonts/Scala-Sans-Light.otf') format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'ScalaSans-bo';
+  src: url('../fonts/Scala-Sans-Bold.otf') format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'ScalaSans-bo-it';
+  src: url('../fonts/Scala-Sans-Bold-Italic.otf') format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ScalaSans-bolder';
+  src: url('../fonts/Scala-Sans-SC-Bold.otf') format("opentype");
+  font-weight: bolder;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MrEaves';
+  src: url('../fonts/Mrs-Eaves-Small-Caps.otf') format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 html, body {
   margin: 0;
   width: 100vw;

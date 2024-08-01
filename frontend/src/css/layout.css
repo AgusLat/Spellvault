@@ -1,6 +1,5 @@
 
 
-
 /* LAYOUT COMPONENT */
 .layout{
     width: 100%;
@@ -54,6 +53,8 @@
     margin: 0px;
     list-style: none;
     align-items: center;
+    font-family: 'ScalaSans-bolder';
+    /* font-weight: lighter; */
 }
 
 .nav__li{

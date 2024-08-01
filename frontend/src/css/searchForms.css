@@ -59,17 +59,16 @@
 
 .quickSearch__btn{
     margin-left: 0.3rem;
-    font-family: 'Philosopher', sans-serif;
+    /* font-family: 'Philosopher', sans-serif; */
     font-size: 1.2rem;
     align-self: flex-end;
-
+    font-family: 'ScalaSans-bolder';
     font-weight: bold;
     color: var(--text);
     background-color: var(--primary);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 2px;
-    text-shadow: 1px 1px 2px var(--secondary);
     cursor: pointer;
     -webkit-transition: all 200ms;
     -moz-transition: all 200ms;

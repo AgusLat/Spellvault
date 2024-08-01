@@ -59,14 +59,13 @@
 
 
 .createChar__button{
-    font-family: 'Philosopher', sans-serif;
+    font-family: 'ScalaSans-bolder';
     font-weight: bold;
     color: var(--text);
     background-color: var(--primary);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 2px;
-    text-shadow: 1px 1px 2px var(--secondary);
     cursor: pointer;
     letter-spacing: 0.1rem;
     width: 80%;

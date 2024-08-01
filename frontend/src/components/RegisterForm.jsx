@@ -71,8 +71,8 @@ export const RegisterForm = () => {
                 </div>
             }
             
-            {(accessType=='SIGNUP') &&<button className='registerForm__submit' disabled={isSignupLoading}>Sign up</button>}
-            {(accessType=='LOGIN') &&<button className='registerForm__submit' disabled={isLoginLoading}>Log in</button>}    
+            {(accessType=='SIGNUP') &&<button className='registerForm__submit' disabled={isSignupLoading}>SIGN UP</button>}
+            {(accessType=='LOGIN') &&<button className='registerForm__submit' disabled={isLoginLoading}>LOG IN</button>}    
         </form>
 
         <div className='registerForm__error'>

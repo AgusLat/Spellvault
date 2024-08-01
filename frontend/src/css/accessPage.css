@@ -1,4 +1,5 @@
 .accessPage{
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -6,14 +7,30 @@
     align-items: center;
     justify-content: center;
     background-color: black;
-    background: linear-gradient(40deg,
+    /* background: linear-gradient(40deg,
         rgba(35, 136, 106, 0.448) 0%,
         rgb(14, 14, 14) 35%,
         rgb(14, 14, 14) 75%,
-        rgba(35, 136, 106, 0.209) 100%);
+        rgba(35, 136, 106, 0.209) 100%);  */
+    /* background-image: url('/maxresdefault.jpg'); */
+    /* background-size: cover; */
     animation-name: appear;
     animation-duration: 1.5s;
     animation-timing-function: ease-in;
+}
+
+.accessPage::before {    
+    content: "";
+    background-image: url('/ancient-desk.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.45;
+    -webkit-mask-image: linear-gradient(0deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0) 90%, rgb(0 0 0) 90%, rgb(0 0 0 / 0%) 100%);
+    mask-image: linear-gradient(0deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0) 90%, rgb(0 0 0) 90%, rgb(0 0 0 / 0%) 100%);
 }
 
 .registerForm__selector{
@@ -47,25 +64,25 @@
     font-weight: bold;
     font-family: 'Philosopher', sans-serif;
     cursor: pointer;
-    border: 3px solid var(--secondary);
-    border-bottom: 3px solid var(--text);
-    background-color: var(--secondary);
+    border: 3px solid #21212100;
+    background-color: #21212100;
     color: var(--text);
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     padding: 0.5rem 0em;
     letter-spacing: 0.4rem;
-    transition: all 1s;
+    transition: all 200ms;
 
 }
 
 
 .registerForm{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(49, 49, 49, 0.075);
+    background-color: rgba(11, 10, 10, 0.691);
     min-width: 400px;
     /* width: 25%; */
     min-height: 550px;
@@ -139,15 +156,13 @@ text-align: center;
 
 .registerForm__submit{
     width: 75%;
-    font-family: 'Philosopher', sans-serif;
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-family: 'ScalaSans-bolder';
+    font-size: 1.1rem;
     color: var(--text);
     background-color: var(--primary);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 2px;
-    text-shadow: 1px 1px 2px var(--secondary);
     cursor: pointer;
     letter-spacing: 0.1rem;
     
@@ -187,12 +202,16 @@ text-align: center;
 
 /* MOBILE */
 @media (max-width: 768px) {
+
+    .accessPage::before{
+        opacity: 0.5;
+    }
     .registerForm{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        background-color:var(--secondaryTransparent);
+        background-color: rgba(11, 10, 10, 0.691);
         min-width: auto;
         max-width: 350px;
         /* width: 25%; */

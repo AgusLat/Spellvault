@@ -13,6 +13,7 @@
 
 .characterSelector__name{
     margin: 0.5rem 0rem;
+    font-family: 'ScalaSans-bolder';
 }
 
 .characterSelector button{

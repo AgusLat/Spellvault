@@ -26,6 +26,7 @@
 
 .characterInfo__rowTitle{
     color: var(--text);
+    font-family: 'ScalaSans';
 
 }
 

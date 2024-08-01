@@ -1,3 +1,6 @@
+
+
+
 .spellCard-container{
     display: flex;
     justify-content: center;
@@ -92,7 +95,6 @@ width: 1.1rem;
     padding-bottom: 0.5rem;
     font-size: 0.8rem;
 
-
 }
 
 .spellCard__icon{
@@ -107,7 +109,6 @@ width: 1.1rem;
 .spellCard__body{
   display: flex;
   flex-direction: column;
-  
   padding: 1rem;
   gap: 1rem;
 }

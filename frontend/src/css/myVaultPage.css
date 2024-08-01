@@ -40,6 +40,7 @@ flex-wrap: wrap;
 padding: 1.3rem;
 align-items: center;
 justify-content: space-evenly;
+font-family: 'ScalaSans-bolder';
 }
 
 .vaultWrapper__a{
