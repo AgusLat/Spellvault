@@ -36,7 +36,7 @@ export const createSpell = async (req, res)=>{
             throw Error('Invalid user')
         }
 
-        const newSpell = customSpellModel.create({
+        const newSpell = await customSpellModel.create({
             
              user_id:objectId,
              name:customSpell.name,
