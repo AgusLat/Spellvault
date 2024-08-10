@@ -37,22 +37,22 @@ export const createSpell = async (req, res)=>{
         }
 
         const newSpell = customSpellModel.create({
-            //LLENAR CON DATOS DEL SPELL EN req.body
-            // user_id:objectId,
-            // name:customSpell.name,
-            // desc:customSpell.desc,
-            // higher_level:customSpell.higher_level,
-            // page:customSpell.page,
-            // range:customSpell.range,
-            // components:customSpell.components,
-            // material: customSpell.material,
-            // ritual:customSpell.ritual,
-            // duration:customSpell.duration,
-            // concentration:customSpell.concentration,
-            // casting_time:customSpell.casting_time,
-            // level:customSpell.level,
-            // school:customSpell.school,
-            // class: customSpell.class
+            
+             user_id:objectId,
+             name:customSpell.name,
+             desc:customSpell.desc,
+             higher_level:customSpell.higher_level,
+             page:customSpell.page,
+             range:customSpell.range,
+             components:customSpell.components,
+             material: customSpell.material,
+             ritual:customSpell.ritual,
+             duration:customSpell.duration,
+             concentration:customSpell.concentration,
+             casting_time:customSpell.casting_time,
+             level:customSpell.level,
+             school:customSpell.school,
+             class: customSpell.class
         })
 
         //ADDS CUSTOM SPELL ID TO THE USER custom_spells
