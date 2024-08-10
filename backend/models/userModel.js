@@ -21,6 +21,15 @@ const userSchema = new Schema({
             ref: 'character',
             }
         }
+    ],
+    customSpells:[ 
+        {
+            _id: false,
+            customSpell_id:{
+            type: Schema.Types.ObjectId,
+            ref: 'customSpell',
+            }
+        }
     ]
         
 });

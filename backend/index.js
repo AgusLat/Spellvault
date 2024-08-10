@@ -3,8 +3,9 @@ import express  from "express";
 import cors from 'cors';
 import cron from 'node-cron'
 import { router as spellRoutes } from './routes/spells.js';
+import { router as customSpellRoutes } from './routes/customSpells.js';
 import { router as userRoutes } from './routes/users.js';
-import {router as profileRoutes} from './routes/profile.js';
+import { router as profileRoutes} from './routes/profile.js';
 import { connectDb } from './connectDb.js';
 
 const app = express()
@@ -26,6 +27,8 @@ app.use( (req, res, next) => {
 
 //ROUTES
 app.use('/api/spells', spellRoutes)
+
+app.use('/api/customspells', customSpellRoutes)
 
 app.use('/api/user', userRoutes)
 

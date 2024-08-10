@@ -21,7 +21,9 @@ export const router = express.Router()
 //    'Authorization': `Bearer ${token}`}
 router.use(requireAuth)
 
-//'/profile/createcharacter'
+
+
+//ROUTE '/api/profile/createcharacter'
 
 //POST
 router.post('/createcharacter', createCharacter)
