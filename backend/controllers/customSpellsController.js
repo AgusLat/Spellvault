@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Types } from "mongoose";
 import { customSpellModel } from "../models/customSpellModel.js";
 import { userModel } from "../models/userModel.js";
 
