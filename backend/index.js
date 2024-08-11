@@ -51,7 +51,7 @@ app.listen(port, ()=>{
 
 
 
-cron.schedule('*/14 * * * *', async()=>{
+cron.schedule('*/10 * * * *', async()=>{
    const response = await fetch('https://spellvault-api.onrender.com/')
    const json = await response.json()
    if(response.ok){
