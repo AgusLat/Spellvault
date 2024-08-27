@@ -109,12 +109,11 @@ export const QuickSearchForm = ({spells, count}) => {
       </span>  
       <div className='spellCard-container'>
         {loading?<Loading size={'--small'}/>:null}
-        {searchError && <div className='spellCard-container__no-matches'><h3>No coincidences</h3></div>}
+        {searchError && <div className='spellCard-container__no-matches'><NoSearch/></div>}
         {spellCardData && <SpellCard key={spellCardData._id} spellId={spellCardData._id} spellData={spellCardData}></SpellCard> }
       </div>
 
     </div>
-    { noSearch && <NoSearch></NoSearch>}
 
     </>
   )

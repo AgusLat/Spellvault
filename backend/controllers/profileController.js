@@ -1,7 +1,19 @@
 import {characterModel} from '../models/characterModel.js'
 import { userModel } from '../models/userModel.js'
 import { spellModel } from '../models/spellModel.js'
+import { customSpellModel } from '../models/customSpellModel.js'
 import mongoose, { Types } from 'mongoose'
+import path from 'path'
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+
+//DEFINES PATH FOR DOWNLOAD
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+
+
 
 export const createCharacter = async (req, res) =>{
 
@@ -164,14 +176,26 @@ export const editcharacter = async(req, res)=>{
 
 export const addSpell = async(req, res)=>{
 
-  const {spellId, charId} = req.body
-
+  const {spellId, isCustom, charId} = req.body
   try {
 
-    const spell = await spellModel.findById( spellId )
+    let spell
+    
+    if(isCustom){
+      spell = await customSpellModel.findById( spellId )
+    }
+
+    if(!isCustom){
+      spell = await spellModel.findById( spellId )
+    }
+    
     const character = await characterModel.findById( charId )
 
-    const isSpellKnown = character.spellData.knownSpells.some(knownSpell => knownSpell.equals(spell));
+
+    const isSpellKnown = character.spellData.knownSpells.some(knownSpell => {
+      const knownSpellId = knownSpell._id  
+      return knownSpellId.toString() === spell._id.toString()
+    })
 
     if (isSpellKnown) {
       return res.status(200).json({ isSpellKnown });
@@ -191,14 +215,26 @@ export const addSpell = async(req, res)=>{
 
 
 export const prepareSpell = async (req, res)=>{
-  const {spellId, charId} = req.body
+  const {spellId, isCustom, charId} = req.body
 
   try {
+    let spell
+    
+    if(isCustom){
+      spell = await customSpellModel.findById( spellId )
+    }
 
-    const spell = await spellModel.findById( spellId )
+    if(!isCustom){
+      spell = await spellModel.findById( spellId )
+    }
+
     const character = await characterModel.findById( charId )
 
-    const isSpellPrepared = character.spellData.preparedSpells.some(knownSpell => knownSpell.equals(spell));
+
+    const isSpellPrepared = character.spellData.preparedSpells.some(preparedSpell => {
+      const preparedSpellId = preparedSpell._id  
+      return preparedSpellId.toString() === spell._id.toString()
+    })
 
     if (isSpellPrepared) {
       return res.status(200).json({ isSpellPrepared });
@@ -224,7 +260,8 @@ export const prepareSpell = async (req, res)=>{
 export const deleteSpell = async(req, res)=>{
 
   const {charId, spellId, path} = req.body
-  
+
+  const objectId = new Types.ObjectId(spellId)
 
   try {
 
@@ -232,18 +269,21 @@ export const deleteSpell = async(req, res)=>{
 
     if(path === 'knownSpells'){
         character = await characterModel.findByIdAndUpdate(charId,
-        { $pull: { 'spellData.knownSpells': { _id: spellId } } }, 
+        { $pull: { 
+          'spellData.knownSpells': { _id: objectId },
+          'spellData.preparedSpells': { _id: objectId } 
+          } 
+          }, 
         { new: true }
       );
     }
 
     if(path === 'preparedSpells'){
       character = await characterModel.findByIdAndUpdate(charId,
-      { $pull: { 'spellData.preparedSpells': { _id: spellId } } }, 
+      { $pull: { 'spellData.preparedSpells': { _id: objectId } } }, 
       { new: true }
     );
   }
-
 
     if (!character) {
       return res.status(404).json({ error: 'Character not found' });
@@ -275,5 +315,25 @@ export const updateSlots = async (req, res)=>{
     
   } catch (error) {
     res.status(400).json({error:error.message})
+  }
+}
+
+
+
+
+export const downloadFile = async (req, res)=>{
+  const filename = req.params.filename;
+  const filePath = path.join(__dirname,'..', 'public', filename)
+  console.log(filePath)
+  try {
+    res.download(filePath, (err) => {
+      if (err) {
+        res.status(404).send('File not found')
+      }
+    })
+    
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Server error');
   }
 }

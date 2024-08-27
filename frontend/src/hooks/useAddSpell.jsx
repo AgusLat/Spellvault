@@ -7,20 +7,19 @@ export const useAddSpell = ()=>{
     const [spellError, setSpellError] = useState(null)
 
 
-    const addSpell = async(spellId, charId, token)=>{
+    const addSpell = async(spellId, isCustom, charId, token)=>{
 
         setSpellLoading(true)
         setSpellError(null)
-
+        
         const response = await fetch('https://spellvault-api.onrender.com/api/profile/addspell',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
             },
-            body: JSON.stringify({spellId,charId})
+            body: JSON.stringify({spellId, isCustom, charId})
         })
-
         const json = await response.json()
 
         if(!response.ok){

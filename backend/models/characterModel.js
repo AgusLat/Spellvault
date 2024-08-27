@@ -1,5 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import { spellSchema } from "./spellModel.js";
+import { customSpellSchema } from "./customSpellModel.js";
 
 export const characterSchema = new Schema({
     user_id:{ 
@@ -39,8 +40,8 @@ export const characterSchema = new Schema({
             of: Number,
             required: true
         },
-        knownSpells: [spellSchema],
-        preparedSpells: [spellSchema]
+        knownSpells: [], 
+        preparedSpells: []
     },
     isActive: {
         type: Boolean,

@@ -78,7 +78,7 @@ export const CreateCharacter = () => {
         </div>
         <div className='createChar__classLevel'>
           <label>
-          Class <select className='createChar__input' type='text' defaultValue={""} onChange={(e)=>{setCharClass(e.target.value)}} required>      
+          Class <select className='createChar__input--sm' type='text' defaultValue={""} onChange={(e)=>{setCharClass(e.target.value)}} required>      
             <option value="">Non selected</option>
             <option value="artificer">Artificer</option>
             <option value="bard">Bard</option>
@@ -100,14 +100,14 @@ export const CreateCharacter = () => {
         </div>
         <div className='createChar__stats'>
           <div className='createChar__subStats'>
-            <label>STR <input className='createChar__input--sm' type='number' min="1" max="20" onChange={(e)=>{setStrStat(e.target.value)}} required></input></label>
-            <label>DEX <input className='createChar__input--sm'  type='number' min="1" max="20" onChange={(e)=>{setDexStat(e.target.value)}} required></input></label>
-            <label>CON <input className='createChar__input--sm' type='number' min="1" max="20" onChange={(e)=>{setConStat(e.target.value)}} required></input></label>
+            <label>Strength <input className='createChar__input--sm' type='number' min="1" max="20" onChange={(e)=>{setStrStat(e.target.value)}} required></input></label>
+            <label>Dexterity <input className='createChar__input--sm'  type='number' min="1" max="20" onChange={(e)=>{setDexStat(e.target.value)}} required></input></label>
+            <label>Constitution <input className='createChar__input--sm' type='number' min="1" max="20" onChange={(e)=>{setConStat(e.target.value)}} required></input></label>
           </div>
           <div className='createChar__subStats'>
-            <label>INT <input className='createChar__input--sm' type='number' min="1" max="20" onChange={(e)=>{setIntStat(e.target.value)}} required></input></label>
-            <label>WIS <input className='createChar__input--sm' type='number' min="1" max="20" onChange={(e)=>{setWisStat(e.target.value)}} required></input></label>
-            <label>CHA <input className='createChar__input--sm' type='number' min="1" max="20" onChange={(e)=>{setChaStat(e.target.value)}} required></input></label>
+            <label>Intelligence <input className='createChar__input--sm' type='number' min="1" max="20" onChange={(e)=>{setIntStat(e.target.value)}} required></input></label>
+            <label>Wisdom <input className='createChar__input--sm' type='number' min="1" max="20" onChange={(e)=>{setWisStat(e.target.value)}} required></input></label>
+            <label>Charisma <input className='createChar__input--sm' type='number' min="1" max="20" onChange={(e)=>{setChaStat(e.target.value)}} required></input></label>
           </div>
         </div>
         <button

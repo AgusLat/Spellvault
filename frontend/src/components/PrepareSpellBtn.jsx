@@ -43,18 +43,21 @@ export const PrepareSpellBtn = ({spellData}) => {
     
         setPrepared(null)
         const spellId = spellData._id
+        const isCustom = spellData.page === 'Custom spell'? true:false
         const charId = state.activeCharacter._id
         const userId = user._id
         const token = user.token
 
-        const result = await prepareSpell(spellId, charId ,token)
+        const result = await prepareSpell(spellId, isCustom, charId ,token)
         
         if (result.isSpellPrepared) {
           setPrepared('')
+
           await deleteSpell(charId, spellId, token, 'preparedSpells')
           await loadCharList(userId, token)
         }
         if (!result.isSpellPrepared) {
+          
           setPrepared('--prepared')
           await loadCharList(userId, token)
         }

@@ -12,7 +12,7 @@ export const VaultSideBar = ({showSidebar}) => {
 
 
   return (
-    <CSSTransition nodeRef={sideBarRef} in={showSidebar} classNames='sidebarTransition' timeout={800}>
+    <CSSTransition nodeRef={sideBarRef} in={showSidebar} classNames='sidebarTransition' timeout={200}>
       <div ref={sideBarRef} className={'vaultSideBar'}>
         {state.characterList.map( (e, i) =>{ return <CharacterSelector key={e._id} charId={e._id} charName={e.name} /> })}
         {state.activeCharacter == null?null:<CharacterInfo character={state.activeCharacter}/>}

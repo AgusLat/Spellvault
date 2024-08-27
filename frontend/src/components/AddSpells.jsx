@@ -9,7 +9,7 @@ export const AddSpells = () => {
 
   return (
     <div className='addSpells'>
-       <AdvancedSearchForm hasAdd={true} spells={spells}></AdvancedSearchForm>
+       <AdvancedSearchForm hasAdd={true} hasCustom={true} hasOrder={true} spells={spells}></AdvancedSearchForm>
     </div>
   )
 }

@@ -47,7 +47,7 @@ pages:
 -El handleSubmit() actua diferente segun el valor de la prop accesType, pasarlo por parametro (X)
 
 
-*DISEÑO LIBRO DE HECHIZOS*
+*DISEÑO LIBRO DE HECHIZOS*  (HECHO)
 -CLASES:
     -BARD (CHA)
     -CLERIC (WIS)
@@ -62,7 +62,7 @@ pages:
 
 
 
-*CONTEXTO PERSONAJE ACTIVO*
+*CONTEXTO PERSONAJE ACTIVO*   (HECHO)
 -Crear un contexto para el personaje activo de cada usuario.
 -Los datos de este contexto se van a guardar dentro de los datos del usuario en la db.
 -SE BUSCA EL ACTIVE CHARACTER EN EL USUARIO
@@ -83,7 +83,7 @@ pages:
 
 
 
-*PASOS CREACION PERSONAJE* (HAY QUE DISEÑAR EL CHARACTERS CONTEXT)
+*PASOS CREACION PERSONAJE* (HECHO)  
 1-RELLENADO DE FORMULARIO EN EL FRONTEND (COMPONENTE CreateCharacter)
 2-EL FORMULARIO EJECUTA UN HOOK -> Crear useCharacterManager()
 3-EL HOOK DEVUELVE 3  FUNCIONES (usamos createCharacter) -> createCharacter, editCharacter, deleteCharacter
@@ -93,11 +93,175 @@ pages:
     Cuando la peticion sea valida, hay que ejecutar un dispatch para actualizar el CONTEXTO CHARACTERS.
 
 
+
+*CUSTOM SPELL MODEL* (HECHO)
+-Diseñar el modelo usando de base los Spells oficiales
+-Sumarle :
+    -Fecha de creacion
+    -Id del creador
+    -Array de user_ids (contador de likes)
+
+-Modelo de datos y opciones validas:
+    -name: String
+    -desc: String( definir AOE(none, cone, cube, cylinder, line, radius, sphere, square, square feet) type y AOE size ft.)
+    -higher_level: String(es una desc, puede haber o no)
+    -range: String, opciones: unlimited, self, touch, ranged(habilita especificar ft.), sight, sepcial?.
+    -components: String, opciones: Verbal, Somatic, Material("V, S, M")
+    -material: String( si hay compomente material es una desc, si no -> "None")
+    -ritual: boolean
+    -concentration: boolean
+    -duration: String (opciones: Time(Up to X minutes/hours/days), Instantaneous, Concentration(especificar tiempo y su escala),  Until dispelled, Until dispelled or triggered, Special)
+    -casting_time: String, opciones: Number + Action, Bonus action, Reaction, Special,
+    -level: String, opciones: "1st-level", "2nd-level", "3rd-level", "4th-level", ..."9th-level"
+    -school: String, opciones: escuelas...
+    -class: String, opciones: clases...
+    -archetype?
+    -domains?
+
+TODO:
+
+    -Hechizos para modificar: 
+        -TELEPORT(le falta la tabla)
+    -Hechizos para agregar:
+        PLAYERS HANDBOOK: COMPLETO
+        ELEMENTAL EVIL PLAYERS COMPANION: COMPLETO 
+        SWORDS COAST ADVENTURERS GUIDE: COMPLETO
+        TASHAS:
+            -Blade of disaster 106
+            -Dream of the blue Veil 106
+            -Intellect fortress 107
+            -Mind Silver 108
+            -Spirit Shroud 108
+            -Summon Aberration 109
+            -Summon Beast 109
+            -Summon Celestial 110
+            -Summon Construct 111
+            -Summon Elemental 111
+            -Summon Fey 112
+            -Summon Fiend 112
+            -Summon Shadowspawn 113
+            -Summon Undead 114
+            -Tasha's caustic brew 115
+            -Tasha's mind whip 115
+            -Tasha's otherwordly guide 116
+        
+        XANATHAR G.T.E:
+            -Blast bond 150
+            -Catnap 151
+            -Cast Fear 151
+            -Ceremony 151
+            -Chaos Bolt 151
+            -Charm monster 151
+            -Create Homunculus 152
+            -Crown of Stars 152
+            -Danse Macabre 153
+            -Dawn 153
+            -Dragon breath 154
+            -Druid Grove 154
+            -Enemies abound 155
+            -Enervation 155
+            -Far step 155
+            -Find greater steed 156
+            -Guardian of nature 157
+            -Healing spirit 157
+            -Holy weapon 157
+            -Illusory dragon 157
+            -Infernal calling 158
+            -Infestation 158
+            -Invulnerability 160
+            -Life transference 160
+            -Maddening Darkness 160
+            -Mass Polymorph 160
+            -Mental prison 161
+            -Mighty fortress 161
+            -Mind spike 162
+            -Negative energy flood 163
+            -Power word pain 163
+            -Primal savagery 163
+            -Psychic scream 163
+            -Scatter 164
+            -Shadow blade 164
+            -Shadow of Moil 164
+            -Sickening Radiance 164
+            -Skill Empowerment 165
+            -Snare 165
+            -Soul cage 165
+            -Steel Wind Strike 166
+            -Summon greater demon 166
+            -Summon lesser demon 167
+            -Synaptic static 167
+            -Temple of the gods 167
+            -Tenser's transformation 168
+            -Thunder Step 168
+            -Tiny Servant 168 (tabla)
+            -Toll the dead 169
+            -Wall of light 170
+            -Wall of sand 170
+            -Word of Radiance 171
+            -Wrath of nature 171
+            -Zephyr strike 171
+
+        LOST LABORATORY OF KWALISH:
+            -Flock of familiars
+            -Galders speedy courier
+            -Galders tower
+
+        EXPLORERS GUIDE TO WILDEMOUNT:
+            -Todo
+        ACQUISITIONS INCORPORATED:
+            -Todo
+
+
+    CustomSpellForm:
+    -Controlar error del hook createSpell y resetear formulario si sale bien. (X)
+    -Agregar mensaje de confirmacion/error al formulario (X)
+
+
+
+    CreacteCharacter:
+    -CSS del formulario
+
+
+
+    Search custom spells:
+    -Muestra los mas populares en el inicio
+
+    AdvancedSearchForm:
+    -AGREGAR PARAMETROS: (X)
+        -PAGE(indica que pagina de la lista se ve) 
+        -CUSTOM( T o F para saber que fetchea )
+        -ORDER BY(metodo de ordenado)
+    -El boton SEARCH siempre manda PAGE = 1 (X)
+    -Orden por defecto NEWER (X)
+    -Al cambiar el ORDER BY (deberia fetchear nuevamente para traer los elementos ordenados)
+
+    SpellList:
+    -Agregare componente de paginacion:(X)
+        -clickear el numero de pagina hace un fetch con los datos del AdvancedSearchForm y el PAGE clickeado
+        -el tipo de order by modifica el array que se le pasa a SpellList
+
+    
+    HOOK useAdvancedSearch:
+    -Agregar los parametros del formulario AdvancedSearchForm:(X)
+        -Definir si el request es para CUSTOM o VANILLA
+        -Envia la pagina que queremos ver (el fetch inicial siempre es 1)
+    
+    CONTROLLER getFilteredSpells:
+    -actualizar controlador :(X)
+        -busca los hechizos filtrados y guarda el TOTAL para generar la cantidad de paginas
+        -devuelve los primeros 20
+        -si le mando PAGE = n , me envia los 20 correspondientes a n pagina 
+
+
+
+
+
+
 ********IMPORTANTE********
 -REALIZAR ESTOS CAMBIOS ANTES DE SUBIR EL CODIGO A GITHUB:
 -AÑADIR LA VARIABLE DE ENTORNO "JWT_SECRET" (X)
 -CAMBIAR LAS RUTAS DE LOS HOOKS: useSignup, useLogin, useLogout, useCreateCharacter
--PASARLAS DE "http://localhost:4000/api/user/signup"  => "https://spellvault-api.vercel.app/api/user/signup"
+-PASARLAS DE "http://localhost:4000/api/user/signup"  => "https://spellvault-api.onrender.com/api/user/signup"
 
 
 

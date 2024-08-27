@@ -19,14 +19,16 @@ export const AddSpellBtn = ({spellData}) => {
 
 
   const handleClick = async ()=>{
-
+      
         setIsknown(null)
         const spellId = spellData._id
+        const isCustom = spellData.page === 'Custom spell'? true:false
         const charId = state.activeCharacter._id
         const userId = user._id
         const token = user.token
 
-        const result = await addSpell(spellId, charId ,token)
+
+        const result = await addSpell(spellId, isCustom, charId ,token)
         
         if (result.isSpellKnown) {
           setIsknown('--known')

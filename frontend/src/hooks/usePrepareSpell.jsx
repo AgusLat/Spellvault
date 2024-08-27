@@ -7,18 +7,18 @@ export const usePrepareSpell = ()=>{
     const [prepareSpellError, setPrepareSpellError] = useState(null)
 
 
-    const prepareSpell = async(spellId, charId, token)=>{
+    const prepareSpell = async(spellId, isCustom, charId, token)=>{
 
         setPrepareSpellLoading(true)
         setPrepareSpellError(null)
-
+        //https://spellvault-api.onrender.com/api/profile/preparespell
         const response = await fetch('https://spellvault-api.onrender.com/api/profile/preparespell',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
             },
-            body: JSON.stringify({spellId,charId})
+            body: JSON.stringify({spellId, isCustom, charId})
         })
 
         const json = await response.json()

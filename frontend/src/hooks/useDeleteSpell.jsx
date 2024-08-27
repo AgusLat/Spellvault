@@ -11,7 +11,7 @@ export const useDeleteSpell = ()=>{
 
         setDeleteSpellLoading(true)
         setDeleteSpellError(null)
-
+        //https://spellvault-api.onrender.com/api/profile/deletespell
         const response = await fetch('https://spellvault-api.onrender.com/api/profile/deletespell',{
             method: 'DELETE',
             headers: {

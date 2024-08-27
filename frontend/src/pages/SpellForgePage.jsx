@@ -1,27 +1,26 @@
-import React from 'react'
 import '../css/spellForgePage.css'
 import { Loading } from '../components/Loading'
-import { useNavigation } from 'react-router-dom'
+import { Navigate, Outlet, useNavigation } from 'react-router-dom'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 export const SpellForgePage = () => {
 
+ 
+
+  //HOOKS
+  const { user } = useAuthContext()
   const navigation = useNavigation()
 
-
-  
-  
-  
-  
   if(navigation.state === "loading" ){
-    return <>
-          <Loading/>
-    </>
-          
+    return <><Loading/> </>
   }
 
   return (
+    <>
     <div className='spellForgePage'>
-        <h1>This section is under development..</h1>
+      <Navigate to='/spellforge/browsespells'/> 
+      <Outlet user={user}/>
     </div>
+    </>
   )
 }

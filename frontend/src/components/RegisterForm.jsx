@@ -66,7 +66,7 @@ export const RegisterForm = () => {
             {(accessType == 'SIGNUP') &&
                 <div className='registerForm__inputWrapper'>
                     <label className='registerForm__termsAndConditions'>
-                      <a onClick={()=>{showTerms()}} >Terms and conditions</a> <input name='termsAndCon' type="checkbox" required  />
+                      <a onClick={()=>{showTerms()}} >Accept terms and conditions</a> <input name='termsAndCon' type="checkbox" required  />
                     </label>
                 </div>
             }

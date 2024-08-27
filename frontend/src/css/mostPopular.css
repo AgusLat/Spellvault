@@ -1,0 +1,32 @@
+.swiper {
+  width: 70%;
+  justify-content: center;
+}
+
+.swiper-slide {
+  background: #312e2e00;
+  padding-bottom: 2.5rem;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ 
+/* MOBILE */
+@media (max-width: 768px) {
+    .swiper {
+        width: 100%;
+      }
+}
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .swiper {
+        width: 100%;
+      }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  
+} 

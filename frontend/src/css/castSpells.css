@@ -30,7 +30,7 @@
 .slotControl__table{
     width: 50%;
     border-collapse: collapse;
-    border: 1px solid rgba(255, 255, 255, 0.318);
+    /* border: 1px solid rgba(255, 255, 255, 0.318); */
     text-align: center;
     margin: 0.5rem 0rem;
 }
@@ -42,7 +42,7 @@
 }
 
 .slotControl__table thead{
-    background-color: var(--secondary);
+    background-color: #1C1D27;
     font-size: 0.8rem;
 }
 .slotControl__table tbody td{
@@ -59,12 +59,13 @@
 .slotControl__select{
     background: var(--secondary);
     color: var(--text);
-    border: 1px solid var(--text);
+    border: 1px solid #434343;
     font-family: 'Philosopher', sans-serif;
     font-size: 0.9rem;
     font-weight: bold;
     padding: 0rem 0.2rem;
     margin: 0rem 0.3rem;
+    cursor: pointer;
 }
 
 .slotControl__btn{
@@ -81,8 +82,8 @@
     letter-spacing: 0.1rem;
 }
 .slotControl__restoreBtn{
-    background-color: var(--secondary);
-    border: solid 1px var(--text);
+    background-color: #1C1D27;
+    /* border: solid 1px var(--text); */
     color: var(--text);
     margin: 0px 10px;
     font-family: 'ScalaSans', sans-serif;
@@ -101,8 +102,8 @@
 
 
 .slotControl__controlBtn{
-    background-color: var(--secondary);
-    border: solid 1px var(--text);
+    background-color: #1C1D27;
+    /* border: solid 1px var(--text); */
     color: var(--text);
     margin: 0px 10px;
     width: 1.8em;
@@ -138,13 +139,14 @@
 .spellCard__selectSlot{
     background: var(--secondary);
     color: var(--text);
-    border: 1px solid var(--text);
+    border: 1px solid #434343;
     font-family: 'Philosopher', sans-serif;
     font-size: 0.9rem;
     font-weight: bold;
     padding: 0rem 0.2rem;
     margin: 0rem 0.3rem;
     align-self: baseline;
+    text-align: center;
     
 }
 

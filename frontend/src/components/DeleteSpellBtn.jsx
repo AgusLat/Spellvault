@@ -23,7 +23,8 @@ export const DeleteSpellBtn = ({spellData}) => {
     const userId = user._id
     const token = user.token
 
-    await deleteSpell(charId, spellId, token, 'knownSpells') //AGREGAR EL PATH
+    await deleteSpell(charId, spellId, token, 'knownSpells')
+
     await loadCharList(userId, token)
 
   }

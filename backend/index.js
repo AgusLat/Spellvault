@@ -24,6 +24,8 @@ app.use( (req, res, next) => {
     next()
 })
 
+//PUBLIC FOLDER
+app.use(express.static('public'));
 
 //ROUTES
 app.use('/api/spells', spellRoutes)
@@ -33,6 +35,9 @@ app.use('/api/customspells', customSpellRoutes)
 app.use('/api/user', userRoutes)
 
 app.use('/api/profile', profileRoutes)
+
+
+
 
 
 

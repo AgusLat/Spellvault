@@ -1,25 +1,33 @@
+import { useState } from "react"
 
+export const useAdvancedSearch = ()=>{
 
-export const useAdvancedSearch = (playerClass, school, level)=>{
+  const [fetchLoading, setFetchLoading] = useState(null)
+  const [fetchError, setFetchError] = useState(null)
 
+  const fetchSpellAdvanced = async (paramsObj)=>{
 
-    const fetchSpellAdvanced = async (playerClass, school, level)=>{
-
-        
-        try {
+    setFetchLoading(true)
+    setFetchError(false)
+      
+      try {
+          const params = new URLSearchParams(paramsObj)
           
-          //ROUTE CAN BE MODIFIED TO 'http://localhost:4000/api/spells'
-            const response = await fetch(`https://spellvault-api.onrender.com/api/spells/filter/&${playerClass}&${school}&${level}`)
-      
-            const spellData = await response.json()
-            // console.log(spellData) //ARRAY OF SPELLS OBJECTS
-            return spellData
-          } catch (error) {
-            console.error(error)
-          }
-      
-    }
+          const response = await fetch(`https://spellvault-api.onrender.com/api/spells/filter?${params.toString()}`)
+    
+          const spellData = await response.json()
+          setFetchLoading(false)
 
-    return [fetchSpellAdvanced]
+          // console.log(spellData) //ARRAY OF SPELLS OBJECTS
+          return spellData
+
+        } catch (error) {
+          setFetchError(error)
+          setFetchLoading(false)
+          console.error(error)
+        }
+  }
+
+  return {fetchSpellAdvanced, fetchLoading, fetchError}
 
 }

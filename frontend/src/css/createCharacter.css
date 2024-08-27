@@ -10,22 +10,23 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-    gap: 3rem 0rem;
+    gap: 2rem 0rem;
     margin-top: 2rem;
     text-shadow: 1px 1px 2px var(--secondary);
     width: 60%;
-
+    font-family: 'ScalaSans-bolder';
 }
 
 .createChar__name{
     display: flex;
-    flex-direction: column;
     width: 80%;
-    font-family: 'MrEaves';
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .createChar__name h1{
-    margin: 5px;
+    margin-right: 5px;
+    font-size: 1.5rem;
 }
 
 .createChar__classLevel{
@@ -41,7 +42,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    gap: 1rem 1.2rem;
     width: 50%;
 }
 
@@ -57,6 +58,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 0.8rem;
 }
 
 
@@ -79,9 +81,11 @@
     background:rgb(198, 255, 227);
     color: var(--secondary);
     border: none;
-    font-family: 'Philosopher', sans-serif;
+    font-family: 'ScalaSans-li', sans-serif;
     font-size: 1rem;
     max-width: 400px;
+    max-height: 20px ;
+    width: 80%;
 }
 
 .createChar__input--sm{
@@ -90,10 +94,10 @@
     color: var(--secondary);
     border: none;
     margin: 0rem 0.5rem;
-    font-family: 'Philosopher', sans-serif;
+    font-family: 'ScalaSans-li', sans-serif;
     font-size: 1rem;
     font-weight: bold;
-    width: 2.5em;
+    width: auto;
 }
 
 .createChar__input:focus-visible{
@@ -132,19 +136,26 @@
 
   .createChar__form{
     max-width: 350px;
-    justify-content: center;
-    width: 90%;
+    justify-content: flex-start;
+    width: 100%;
     font-size: 0.9rem;
   }
 
+  .createChar__name{
+    width: 95%;
+  }
+
   .createChar__classLevel{
-    justify-content: space-evenly;
+    justify-content: flex-start;
     font-size: 1rem;
+    gap: 1rem 3rem;
+    flex-wrap: wrap;
   }
 
   .createChar__stats{
     width: 80%;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    /* gap: 0rem; */
   }
 
   .createChar__input{
@@ -156,7 +167,7 @@
   }
 
   .createChar__button{
-    width: 90%;
+    width: 100%;
 }
 
 
@@ -166,11 +177,21 @@
     .createChar__form{
         width: 60%;
         font-size: 0.9em;
-      }
+    }
 
+    .createChar__name{
+      width: 95%;
+    }
+
+    .createChar__classLevel{
+        gap: 2rem 2.6rem;
+    }
+    
     .createChar__button{
         width: 100%;
     }
+
+
 }
 
 /* DESKTOP */

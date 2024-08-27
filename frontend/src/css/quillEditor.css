@@ -1,0 +1,36 @@
+.quill{
+    background-color: #91BDAC;
+    color: var(--secondary);
+    border-radius: 1px;
+    width: 100%;
+    margin: 1rem 0rem;
+}
+
+.ql-toolbar.ql-snow {
+    border: none;
+}
+
+.ql-container.ql-snow {
+    border: none;
+
+}
+
+.ql-toolbar.ql-snow{
+    border: none;
+}
+
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+  
+}
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  
+} 

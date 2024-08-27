@@ -1,0 +1,332 @@
+.createSpells{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4vh;
+}
+
+.createSpells__hr {
+    width: 90%;
+    border: none;
+    border-top: 1px solid #ffffff26;
+}
+
+.createSpells__guideDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 3rem;
+}
+
+.createSpells__browse{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.createSpells__a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text);
+    background-color: rgba(28, 20, 20, 0.557);
+    padding: 1rem 2rem;
+    font-family: 'ScalaSans-bolder';
+    border-radius: 3px;
+
+}
+
+.createSpells__a > img{
+    width: 2rem;
+    height: 2rem;
+    vertical-align: center;
+    filter: brightness(0) saturate(100%) invert(81%) sepia(38%) saturate(0%) hue-rotate(120deg) brightness(101%) contrast(97%);
+}
+
+.--aPressed{
+    background-color: rgba(59, 53, 53, 0.199);
+
+
+}
+
+
+.createSpells__resourcesContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+}
+.createSpells__resources{
+    display: flex;
+    width: 100%;
+    padding: 0.5rem 3rem;
+    flex-direction: column;
+    background-color:rgb(192 203 197 / 7%);
+    color: #e4e4e4cf;
+    border-radius: 3px;
+    box-shadow: 4px 4px 3px 0px rgba(0, 0, 0, 0.283);
+    font-family: 'ScalaSans-bolder';
+    font-size: 1.6rem;
+
+}
+
+.createSpells__resources>p{
+    margin-bottom: 0px;
+    color: rgb(125 201 193)
+
+}
+
+.createSpells__resources > ul{
+    font-family: 'ScalaSans';
+    list-style: square;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    font-size: 1rem;
+    margin-bottom: 25px;
+
+}
+
+
+.createSpells__resources li::marker{
+    color: rgb(146, 172, 205);
+    
+
+}
+
+.createSpells__resources  b{
+    font-size: 1.1rem;
+    color: rgb(33, 107, 198);
+    cursor: pointer;
+    position: relative;
+
+}
+
+
+.createSpells__copyConfirm{
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    position: absolute;
+    bottom: 15px;
+    left: 0px;
+    padding: 3px 5px;
+    border-radius: 2px;
+    font-family: 'ScalaSans-li';
+    font-size: 0.7rem;
+    transition: all 200ms ease-in-out;
+    color: var(--accent);
+    width: 100px;
+}
+
+.--copyVisible{
+    opacity: 1;
+}
+
+
+/* SCHOOLS INFO */
+
+.schoolsInfo__arrow{
+    width: 1rem;
+    cursor: pointer;
+    vertical-align: center;
+    transition: all 200ms ease-in-out;
+  }
+
+.schoolsInfo > h3{
+    margin-left: 1rem;
+    margin-top: 2rem;
+    font-size: 1.7rem;
+    font-family: 'ScalaSans-bolder';
+    cursor: pointer;
+ 
+}
+.schoolsInfo__container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgba(250, 235, 215, 0.057);
+    border-radius: 1px;
+    margin-bottom: 5rem ;
+}
+
+.schoolsInfo__container>div{
+    width: 50%;
+    min-width: 300px;
+}
+
+
+.schoolsInfo__container ul{
+    padding-inline-start: 0px;
+    padding: 0rem 15px;
+    list-style: none;
+}
+
+.schoolsInfo__container h4{
+    font-family: 'ScalaSans-bolder';
+}
+
+.schoolsInfo__container p{
+    font-family: 'ScalaSans-li';
+    font-size: 0.9rem;
+    min-width: 300px;
+    color: rgba(240, 248, 255, 0.64);
+}
+
+
+.createSpells__customSpellFormContainer>h3{
+    font-size: 2rem;
+    margin-bottom: 0px;
+    background: rgb(35 89 78 / 55%);
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    font-family: 'MrEaves';
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    box-shadow: 4px 0px 3px 0px rgba(0, 0, 0, 0.283);
+    /* color: var(--accent); */
+
+}
+
+
+/* CSS-TRANSITION */
+
+.schoolsTransition-appear {
+    display: none;
+    opacity: 0;
+    max-height: 0vh;
+  }
+.schoolsTransition-appear-active {
+  display: none;
+  opacity: 0;
+  max-height: 0vh;
+  transition:  max-height 300ms, opacity 100ms ease-in-out;
+}
+.schoolsTransition-appear-done {
+  display: none;
+  opacity: 0;
+  max-height: 0vh;
+  transition: max-height 300ms, opacity 100ms ease-in-out;
+}
+
+.schoolsTransition-exit {
+    display: flex;
+    opacity: 0;
+    max-height: 0vh;
+  }
+  .schoolsTransition-exit-active {
+    display: flex;
+    opacity: 1;
+    max-height: 2000px;
+    transition:  max-height 300ms, opacity 100ms ease-in-out;
+  }
+  .schoolsTransition-exit-done {
+    display: flex;
+    opacity: 1;
+    max-height: 2000px;
+    transition:  max-height 300ms, opacity 100ms ease-in-out;
+  }
+
+  .schoolsTransition-enter {
+    display: flex;
+    opacity: 1;
+    max-height: 2000px;
+  }
+  .schoolsTransition-enter-active {
+    display: flex;
+    opacity: 0;
+    max-height: 0vh;
+    transition:  max-height 300ms, opacity 100ms ease-in-out;
+  }
+  .schoolsTransition-enter-done {
+    display: none;
+    opacity: 0;
+    max-height: 0vh;
+    transition: max-height 300ms, opacity 100ms ease-in-out;
+  }
+ 
+/* MOBILE */
+@media (max-width: 768px) {
+
+   
+    .createSpells__resourcesContainer {
+       gap:2rem;
+       justify-content: center;
+    }
+
+    .createSpells__resources{
+        padding: 1rem 0.5rem;
+        font-size: 1.1rem;
+        width: 90%;
+    }
+
+    .createSpells__resources>p{
+        padding: 0rem 0.8rem;
+    }
+
+    .createSpells__browse {
+        font-size: 0.9rem;
+       width: 95%;
+    }
+
+
+    .createSpells__resources > ul{
+        gap: 0.7rem;
+        font-size: 0.8rem;
+        margin-bottom: 25px;
+    
+    }
+    
+    .createSpells__resources  b{
+        font-size: 0.9rem;
+        color: rgb(33, 107, 198);
+    
+    }
+
+    .createSpells__a {
+        padding: 0.5rem 1rem;
+    }
+
+    .schoolsInfo > h3{
+        font-size: 1.3rem;
+        margin-left: 1rem;
+     
+    }
+    .schoolsInfo__container>div{
+        width: 100%;
+        min-width: 300px;
+    }
+    .schoolsInfo__container p{
+       margin: 1rem;
+    }
+
+    .createSpells__customSpellFormContainer>h3{
+        font-size: 1.5rem;
+    }  
+}
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .createSpells{
+        width: 85%;
+    }
+
+    .createSpells__customSpellFormContainer>h3{
+        font-size: 1.5rem;
+    } 
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  
+} 
+

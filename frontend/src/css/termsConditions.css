@@ -4,7 +4,6 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    width: 30%;
     height: 50vh;
     background-color: rgb(34, 41, 41);
     font-size: 0.8rem;
@@ -72,7 +71,6 @@
 @media (min-width: 768px) and (max-width: 1024px) {
 
     .termsAndConditions{
-        width: 60%;
         height: 70vh;
         font-size: 0.7rem;
     }

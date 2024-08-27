@@ -53,7 +53,7 @@ export const NavBar = () => {
     <>
     <nav className='nav'>
         {isVisible && <div className='nav__smoke' onClick={()=>handleClick()}></div>}
-        <h1 className='nav__h1'>SCROLL VAULT  </h1>
+        <NavLink className='nav__h1'><h1  >SCROLL VAULT  </h1></NavLink>
 
         <div className='nav__menu'>  
 
@@ -67,11 +67,9 @@ export const NavBar = () => {
                 </NavLink>
                 </li>
                 <li className='nav__li'>
-                {user?<NavLink onClick={()=>handleClick()} className='nav__a' to={'/spellforge'}>
+                <NavLink onClick={()=>handleClick()} className='nav__a' to={'/spellforge/browsespells'}>
                     Homebrew spells
-                </NavLink>:
-                <a onClick={()=>handleModal()}  className='nav__a'>Homebrew spells</a>
-                }
+                </NavLink>
                 </li>
                 <li className='nav__li'>
                 {user?<NavLink onClick={()=>handleClick()}  className='nav__a' to={'/myvault'}>
@@ -87,7 +85,7 @@ export const NavBar = () => {
                 </li>)}
                 { user && 
                 (<li className='nav__li'>
-                <NavLink onClick={()=>logout()} className='nav__a' to={'/'}>
+                <NavLink onClick={()=>logout()} className='nav__a' to={'/access'}>
                     Logout
                 </NavLink>
                 </li>)}

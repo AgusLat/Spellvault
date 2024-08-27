@@ -13,7 +13,8 @@ export const CastControl = ({spellData}) => {
   const {updateSlots, updateSlotLoading, updateSlotError} = useUpdateSlots()
 
   //USE-STATES
-  const [ slot, setSlot ] = useState('cantrip')
+  const [ slot, setSlot ] = useState(
+    spellData.level === 'Cantrip'?'cantrip': spellData.level.slice(0, spellData.level.indexOf('-')))
   const [ isPressed, setIsPressed ] = useState(false)
 
 
@@ -25,7 +26,7 @@ export const CastControl = ({spellData}) => {
   }
 
   const handleClick = async () =>{
-
+    
     if(slot === 'cantrip'){
       setIsPressed(true)
       setTimeout(() => {
@@ -65,9 +66,9 @@ export const CastControl = ({spellData}) => {
           src='/lightning.svg'></img>
       </button>
       <select className='spellCard__selectSlot' onChange={handleSlotChange} defaultValue={'cantrip'}>
-        <option value={'cantrip'} >
-          Cantrip
-        </option>
+       {spellData.level === 'Cantrip' && <option value={'cantrip'} >
+          C.
+        </option>}
         {state.activeCharacter &&
           (levelOptions
             .filter((lvl) => levelOptions.indexOf(lvl) >= levelOptions.indexOf(spellData.level))

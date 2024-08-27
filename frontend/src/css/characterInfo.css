@@ -112,14 +112,13 @@
   /* MOBILE */
 @media (max-width: 768px) {
     .characterInfo{
-        background: #161616f6;
         margin: 0px;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
         gap: 1rem 2rem;
         padding: 2rem 3rem;
-       
+       min-height: 75vh;
     }
     .characterInfo__table{
         width: 100%;

@@ -1,11 +1,273 @@
 .spellForgePage{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100vw;
-    height: 90vh;
-    background-color: #0c0c0c;
-    color: #e4e4e44d;
+    min-height: 90vh;
+    background: rgb(28,29,39);
+    background: linear-gradient(0deg, rgba(28,29,39,1) 40%, rgba(24,46,53,1) 100%);
+    color: var(--text);
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation-name: appear;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in;
 
 }
+
+.customSpellsHome{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.customSpellsHome__hr{
+    width: 60%;
+    border: none;
+    border-top: 1px solid #ffffff26;
+}
+
+.customSpellsHome__topFiveDiv{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    /* box-shadow: inset 0px 0px 10px 5px rgba(9, 27, 23, 0.406); */
+    background-image: url('/background-spellforge.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+}
+
+
+
+.customSpellsHome__topFiveDiv > h2{
+    font-family: 'Philosopher';
+    font-family: 'MrEaves';
+    text-shadow: 0px 0px 2px white;
+    font-size: 1.5rem;
+    padding-top: 2rem;
+    z-index: 1;
+
+}
+
+
+.customSpellsHome__infoDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    font-family: 'Philosopher';
+    font-family: 'ScalaSans-li';
+    width: 100%;
+    text-align: left;
+    padding: 3rem 0rem;
+    gap: 2rem;
+}
+
+.customSpellsHome__subInfoDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 25%;
+    min-width: 400px;
+    background-color: rgba(0, 0, 0, 0.124);
+    border-radius: 5px;
+    box-shadow: 4px 4px 3px 0px rgba(0, 0, 0, 0.283);
+    height: 200px;
+    padding: 2rem;
+
+}
+
+.customSpellsHome__infoDiv b{
+    font-family: 'ScalaSans';
+    color: var(--accent);
+}
+
+
+.customSpellsHome__subInfoDiv > p{
+    margin-top: 3px;
+    margin-bottom: 20px ;
+    line-height: 1.8rem;
+    font-size: 1.1rem;
+    color: var(--text);
+}
+
+.customSpellsHome__subInfoDiv strong{
+    font-size: 1.35rem;
+    font-family: 'ScalaSans-bolder';
+    color: var(--text);
+}
+
+.customSpellsHome__a{
+    text-decoration: none;
+    text-align: center;
+    background-color: var(--primary);
+    padding: 0.7rem 0rem;
+    width: 100%;
+    font-size: 1rem;
+    font-family: 'ScalaSans-bolder';
+    color: var(--text);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.customSpellsHome__searchDiv{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    /* background-color: #1C1D27; */
+    padding-top: 5rem;
+}
+
+.--navigatePressed{
+    background-color:rgb(198, 255, 227);
+    color: var(--secondary);
+    transition: all 0.2s;
+}
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .customSpellsHome__hr{
+        width: 0%;
+        border: none;
+        border-top: 1px solid #ffffff26;
+    }
+
+    .customSpellsHome__topFiveDiv{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        background-image: none;
+
+        
+    }
+    
+    .customSpellsHome__topFiveDiv::before{
+        position: absolute;
+        content: '';
+        background-size: auto;
+        background-image: url('/background-spellforge.png');
+        background-repeat: no-repeat;
+        background-position: 50% 0%;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        box-shadow: inset 0px 0px 10px 5px rgba(9, 27, 23, 0.211);
+
+
+    }
+
+    .customSpellsHome__topFiveDiv > h2{
+        font-family: 'Philosopher';
+        font-family: 'MrEaves';
+        text-shadow: 0px 0px 2px white;
+        font-size: 1.3rem;
+        padding: 2rem 2rem 0rem 2rem;
+        text-align: center;
+
+    }
+    .customSpellsHome__infoDiv{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding: 0px;
+        gap: 0rem;
+    }
+
+    .customSpellsHome__subInfoDiv{
+        height: auto;
+        min-width: 0px;
+        width: 90%;
+        max-width: 350px;
+        padding: 1rem 1rem;
+        margin: 0px;
+        text-align: left;
+        font-size: 0.9rem;
+        box-shadow: none;
+    }
+
+    .customSpellsHome__subInfoDiv > p{
+        margin: 0px;
+        margin-bottom: 5px ;
+        padding: 0.5rem 0rem;
+        font-size: 0.9rem;
+
+    }
+
+    .customSpellsHome__subInfoDiv strong{
+        font-size: 1.2rem;
+        color: var(--text);
+    }
+}
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .customSpellsHome__topFiveDiv{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        background-image: none;
+
+        
+    }
+    
+    .customSpellsHome__topFiveDiv::before{
+        position: absolute;
+        content: '';
+        background-size: auto;
+        background-image: url('/background-spellforge.png');
+        background-repeat: no-repeat;
+        background-position: 50% 0%;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        box-shadow: inset 0px 0px 10px 5px rgba(9, 27, 23, 0.211);
+
+
+    }
+
+    .customSpellsHome__infoDiv{
+        width: 100%;
+    }
+
+    .customSpellsHome__subInfoDiv{
+        width: 60%;
+    }
+
+    .customSpellsHome__subInfoDiv > p{
+        padding: 0.5rem 0rem;
+        font-size: 1rem;
+        margin-bottom: 0px;
+        margin-top: 25px;
+
+    }
+
+    .customSpellsHome__subInfoDiv strong{
+        font-size: 1.2rem;
+        color: var(--text);
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  
+} 

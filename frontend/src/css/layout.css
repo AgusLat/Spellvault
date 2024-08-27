@@ -13,10 +13,10 @@
 
 /*NAV BLOCK*/
 .nav{
-    background-color: black;
+    background-color: #1C1D27;
     color: var(--text);
     font-weight: bold;
-    height: 10vh;
+    height: 7vh;
     display: flex;
     position: fixed;
     width: 100%;
@@ -24,7 +24,7 @@
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    box-shadow: 0px 0px 1px 2px black;
+    box-shadow: 0px 0px 1px 2px #1C1D27;
 }
 
 .nav__smoke{
@@ -32,8 +32,16 @@
 }
 
 .nav__h1{
+    text-decoration: none;
     margin: 0 20px;
     text-shadow: 1px 1px 2px var(--secondary);
+    color: var(--text);
+}
+
+.nav__h1>h1{
+    font-size: 2rem;
+    cursor: pointer;
+    margin: 0px;
 }
 
 
@@ -59,7 +67,7 @@
 
 .nav__li{
     padding: 10px;
-    margin: 10px;
+    margin: 4px;
     cursor: pointer;
     border-radius: 3px;
     
@@ -82,8 +90,12 @@
 .pages{
     width: 100%;
     /* min-height: 90vh; */
-    margin-top: 10vh;
+    /* margin-top: 10vh;  PRUEBA */
     background-color: black;
+
+    /*  PRUEBA*/
+    position: absolute;
+    top: 7vh;
 }
 
 
@@ -101,7 +113,7 @@
         opacity: 0.5;
     }
 
-    .nav__h1{
+    .nav__h1>h1{
         font-size: 1.5rem;
 
     }
@@ -114,7 +126,7 @@
         align-items: flex-end;
         position: absolute;
         height: 90vh;
-        top: 10vh;
+        top: 7vh;
         right: 0;
      
        /* background-color: rgba(0, 0, 0, 0.357); */
@@ -124,9 +136,9 @@
     .nav__btn{
         position: absolute;
         display: block;
-        top: -5.7rem;
+        top: -3.4rem;
         width: 1.5rem;
-        padding: 2.5rem;
+        padding: 1rem 2.5rem;
     
     }
 
@@ -164,7 +176,7 @@
   
 /* TABLET */
 @media (min-width: 768px) and (max-width: 1024px) {
-    .nav__h1{
+    .nav__h1>h1{
         font-size: 2rem;
         
     }
@@ -178,11 +190,11 @@
 /* DESKTOP */
 @media (min-width: 1024px) {
     .nav__h1{
-        font-size: 3rem;
+        font-size: 2rem;
 
     }
     .nav__a{
-        font-size: 1.3rem;
+        font-size: 1.1rem;
 
     }
     

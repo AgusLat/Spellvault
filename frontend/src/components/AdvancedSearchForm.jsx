@@ -7,51 +7,105 @@ import '../css/loadingPage.css'
 import SpellList from './SpellList'
 import { NoSearch } from './NoSearch'
 import { Loading } from './Loading'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 
-export const AdvancedSearchForm = ({spells, hasAdd}) => {
+export const AdvancedSearchForm = ({spells, searchCustoms, hasAdd, hasLike, hasOrder, hasCustom}) => {
 
-    const [noSearch, setNoSearch]         = useState(false)
-    const [playerClass, setPlayerClass]   = useState('')
-    const [school, setSchool]             = useState('')
-    const [level, setLevel]               = useState('')
-    const [spellResults, setSpellResults] = useState(null)
-    const [loading, setLoading]           = useState(false)
-    const [noResults, setNoResults]       = useState(false)
-    const [ isPressed, setIsPressed]      = useState(false)
+    const [noSearch, setNoSearch]                 = useState(true)
+    const [spellResults, setSpellResults]         = useState([])
+    const [totalPages, setTotalPages]             = useState(0)
+    const [noResults, setNoResults]               = useState(false)
+    const [isPressed, setIsPressed]               = useState(false)
+    const [isPrevPressed, setIsPrevPressed]       = useState(false)
+    const [isNextPressed, setIsNextPressed]       = useState(false)
 
-
-
-    const [fetchSpellAdvanced] = useAdvancedSearch()
-
-
-    useEffect(() => {
-
-        setNoSearch(true)
-
-    },[])
+    //QUERY STATES
+    const [playerClass, setPlayerClass]           = useState('')
+    const [school, setSchool]                     = useState('')
+    const [level, setLevel]                       = useState('')
+    const [isCustom, setIsCustom]                 = useState(searchCustoms? searchCustoms: false)
+    const [sortBy, setSortBy]                     = useState({type:'name', order: 'asc'})//'name', 'user_likes', 'createdAt', user._id || 'asc', 'desc'
+    const [currentPage, setCurrentPage]           = useState(1)
 
     
+    //CONTEXT
+    const {user} = useAuthContext()
+    //HOOKS
+    const {fetchSpellAdvanced, fetchError, fetchLoading} = useAdvancedSearch()
 
-    const handleClick = async(e)=>{
-        e.preventDefault()
+
+    //USE-EFFECTS
+    useEffect(() => {
+        setNoSearch(true)
+    },[])
+
+    useEffect(() => {
+         if(!noSearch){
+             handleSearch();
+             setNoSearch(true)
+         }
+    }, [currentPage, noSearch]);
+
+
+    //FETCH HANDLER
+
+    const handleSearch = async()=>{
+
+        if(!isCustom){
+            setSortBy({type:'name', order: 'asc'})
+        }
+
         setNoResults(false)
-        setNoSearch(false)
-        setLoading(true)
-        const results = await fetchSpellAdvanced(playerClass, school, level)
-        if(results.length === 0){
+        let queryParams = {
+            ...(playerClass) && {playerClass: playerClass},
+            ...(school) && {school: school},
+            ...(level) && {level: level},
+            custom: isCustom.toString(),
+            sortBy: sortBy.type,
+            sortOrder: sortBy.order,
+            page: currentPage.toString()
+        }
+
+        const {spells, totalPages} = await fetchSpellAdvanced(queryParams)
+        
+        if(spells.length === 0){
             setSpellResults(null)
             setNoResults(true)
-            setLoading(false)
+            setTotalPages(0)
+
             return
         }
-        setLoading(false)
-        setSpellResults(results)
+        setSpellResults(spells)
+        setTotalPages(totalPages)
     }
 
 
-    
 
+    //PAGINATION HANDLER
+
+    const handleSubmit = (e)=>{
+      e.preventDefault()
+      setCurrentPage(1)
+      setNoSearch(false)
+    }
+
+    const handlePrevPage = () => {
+      if (currentPage > 1) {
+        setCurrentPage(currentPage- 1);
+        setNoSearch(false)
+      }
+    };
+
+    const handleNextPage = () => {
+      if (currentPage < totalPages) {
+        setCurrentPage(currentPage + 1);
+        setNoSearch(false)
+      }
+    };
+
+      
+    
 
   return (
     <>
@@ -105,8 +159,33 @@ export const AdvancedSearchForm = ({spells, hasAdd}) => {
                     <option value="9th-level">9th Level</option>
                 </select>
             </div>
-            </div>
-            
+            { hasOrder && <div>
+                <label>Sort by</label>
+                <select 
+                    value={JSON.stringify(sortBy)} 
+                    onChange={(e)=>setSortBy(JSON.parse(e.target.value))} 
+                    className='advanced-selector'
+                >
+                    <option value={JSON.stringify({type:'name', order: 'asc'})}>Name</option>
+                    <option disabled={!isCustom}  value={JSON.stringify({type:'createdAt', order: 'desc'})}>Latest</option>
+                    <option disabled={!isCustom}  value={JSON.stringify({type:'createdAt', order: 'asc'})}>Oldest</option>
+                    <option disabled={!isCustom}  value={JSON.stringify({type:'user_likes', order: 'desc'})}>Most popular</option>
+                    {user  && <option disabled={!isCustom} value={JSON.stringify({type: user._id, order: 'desc'})}>Favorites</option>}
+                </select>
+            </div>}
+            { hasCustom && <div>
+                <label>Source</label>
+                <select 
+                    value={isCustom} 
+                    onChange={(e)=>{
+                        setIsCustom(e.target.value=== 'false'? false: true)
+                        e.target.value === 'false'? setSortBy({type:'name', order: 'asc'}): null
+                    }} 
+                    className='advanced-selector' name="levelSelect">
+                    <option value='false' >Official</option>
+                    <option value='true' >Homebrew</option>
+                </select>
+            </div>}
             <button 
                 type='submit' 
                 className={'quickSearch__btn'  + (isPressed? ' --searchPressed': '')}
@@ -114,23 +193,59 @@ export const AdvancedSearchForm = ({spells, hasAdd}) => {
                 onTouchEnd={()=>{setIsPressed(false)}}
                 onMouseDown={()=>{setIsPressed(true)}}
                 onMouseUp={()=>{setIsPressed(false)}}
-                onClick={(e)=>handleClick(e)} 
+                onClick={(e)=>handleSubmit(e)} 
                 >
                     SEARCH
             </button>
+            </div>
+            
+           
         </form>
         <span className='quickSearch__help'>
-          *Ritual or concentration
+          *Ritual, Concentration, Homebrew
           <b className='spellCard__ritualConcentration'>R</b>
           <b className='spellCard__ritualConcentration'>C</b>
+          <b className='spellCard__ritualConcentration'>HB</b>
+
       </span>  
     </div>
 
-    {noSearch && <NoSearch/>}
-    {loading?<Loading size={'--small'}/>:null}
-    {spellResults && <SpellList hasAdd={hasAdd} spellData={spellResults}></SpellList>}
-    {noResults && <p>No spells found</p>}
+    <div className={noResults || spellResults?.length < 10?'advancedSearch__resultsDiv':'advancedSearch__resultsDiv--long'}>
+        {noResults && <NoSearch/>}
+        {fetchError && <p>{fetchError}</p>}
+        {fetchLoading?<Loading size={''}/>:null}
+        {(spellResults && !fetchLoading) && <SpellList hasAdd={hasAdd} hasLike={hasLike} spellData={spellResults}></SpellList>}
+    </div>
 
+    <div className='advancedSearch__pagesDiv'>
+        {(totalPages > 0) && 
+        <>
+            <div className='advancedSearch__pageCountDiv'>
+                <button 
+                    className={'advancedSearch__pageControls' + (isPrevPressed? ' --searchPressed': '')}
+                    onTouchStart={()=>{setIsPrevPressed(true)}}
+                    onTouchEnd={()=>{setIsPrevPressed(false)}}
+                    onMouseDown={()=>{setIsPrevPressed(true)}}
+                    onMouseUp={()=>{setIsPrevPressed(false)}}
+                    onClick={handlePrevPage} 
+                    disabled={currentPage === 1}>
+                   <img src="/double-arrow-left.svg" alt="previous" />
+                </button>
+                <p> Page {currentPage} of {totalPages}</p>
+                <button 
+                    className={'advancedSearch__pageControls' + (isNextPressed? ' --searchPressed': '')}
+                    onTouchStart={()=>{setIsNextPressed(true)}}
+                    onTouchEnd={()=>{setIsNextPressed(false)}}
+                    onMouseDown={()=>{setIsNextPressed(true)}}
+                    onMouseUp={()=>{setIsNextPressed(false)}}
+                    onClick={handleNextPage} 
+                    disabled={currentPage === totalPages}>
+                    <img src="/double-arrow-right.svg" alt="next" />
+                </button>
+            </div>
+        </>
+        }
+    </div>
     
     </>
   )

@@ -1,6 +1,6 @@
 :root{
   --primary: #23886a;
-  --secondary:#212121;
+  --secondary:#1C1D27;
   --secondaryTransparent:#21212182;
   --terciary: #7cb8a6;
   --text:#e4e4e4;
@@ -63,24 +63,29 @@
   font-style: normal;
 }
 
-
+/* DEBUG  */
+/* * {
+  outline: 1px solid red;
+} */
 
 html, body {
   margin: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow-x: hidden;
   font-size: 16px;
   background-color: black;
   -webkit-tap-highlight-color: transparent;
+  scrollbar-color: rgba(49, 103, 83, 0.635) #50514e2d;
+
 }
 
 #root { 
   margin: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-}
 
+}
 
 
 /*TEMPLATE FOR DESKTOP, TABLET AND MOBILE RESOLUTIONS*/

@@ -1,0 +1,396 @@
+.customSpellForm{
+    position: relative;
+    width: 1000px;
+    margin-bottom: 3rem;
+    color: var(--text);
+    background-color: #32fbd430;
+    
+    /* background: linear-gradient(135deg, rgba(165, 202, 187, 0.169) 1%, rgba(1, 13, 42, 0.249) 100%); */
+    border-radius: 0.2rem;
+    border-top-left-radius: 0px;
+    transition: all 500ms;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 4px 4px 3px 0px rgba(0, 0, 0, 0.283);
+}
+
+.customSpellForm::before{
+    content: "";
+    position: absolute;
+    background-image: url('/spellform-background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.13;
+}
+
+.customSpellForm__form{
+     /* width: 1080px;   */
+   font-family: 'ScalaSans-bo';
+   z-index: 1;
+}
+
+
+/* INPUTS */
+
+.customSpellForm__inputDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 2.5rem;
+}
+
+.customSpellForm__input{
+    background-color: #91BDAC;
+    border: none;
+    border-radius: 1px;
+    font-family: 'ScalaSans-li';
+    font-size: 0.9rem;
+    width: 130px;
+    height: 1.5rem;
+}
+
+.customSpellForm__input:focus{
+    outline: 2px solid var(--accent);
+    transition: all 0.2s;
+}
+
+.customSpellForm__textareaInput{
+    background-color: #91BDAC;
+    border: none;
+    border-radius: 1px;
+    font-family: 'ScalaSans-li';
+    font-size: 0.9rem;
+    height: 70px;
+    resize: none;
+    margin: 1rem 0rem;
+
+
+}
+
+.customSpellForm__textareaInput:focus{
+    outline: 2px solid var(--accent);
+    transition: all 0.2s;
+}
+
+.--short{
+    width: 90px;
+}
+
+.--medium{
+    width: 250px;
+}
+
+.--long{
+    width: 820px;
+}
+
+.--longest{
+    width: 964px;
+}
+
+.--customBorder{
+    /* border: 1px solid rgba(128, 128, 128, 0.200); */
+    padding: 1rem 0.3rem;
+    padding-bottom: 0.7rem;
+  }
+
+.customSpellForm__submit{
+    position: relative;
+    width: 50%;
+    left: 25%;
+    font-weight: bold;
+    color: var(--text);
+    background-color: var(--primary);
+    border: none;
+    padding: 0.5rem 0.5rem;
+    border-radius: 2px;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+    transition: all 100ms ease-in-out;
+    font-family: 'ScalaSans-bolder';
+}
+
+.--submitDisabled{
+    background-color:rgb(198, 255, 227);
+    color: var(--secondary);
+}
+
+.customSpellForm__confirmationDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--accent);
+    transition: all 0.2s;
+}
+
+
+
+
+
+/* INPUT ERROR */
+
+.--error{
+    background-color: rgb(246, 173, 173) ;
+   
+    transition: all 0.2s;
+}
+
+.--error:focus{
+    outline: 1px solid var(--error);
+    transition: all 0.2s;  
+}
+
+.customSpellForm__errorSpan{
+    font-size: 0.6rem;
+    font-style: italic;
+    color: var(--error);
+    transition: all 0.2s;
+}
+
+.customSpellForm__errorDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--error);
+    transition: all 0.2s;
+}
+
+
+
+/* CUSTOM FORM HEADER */
+.customSpellForm__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.customSpellForm__title{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 1rem;
+    gap: 0.5rem;
+
+}
+
+/* NAME AND RC INPUT */
+
+.customSpellForm__name{
+    padding-top: 0.7rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.customSpellForm__name label{
+   font-size: 1.4rem;
+}
+
+
+.customSpellForm__rcDiv{
+    display: flex;
+   
+  }
+
+.customSpellForm__rc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(182, 240, 182);
+    padding: 0rem 0.2rem;
+    /* background-color: rgba(255, 255, 255, 0.055); */
+    /* border: 1px solid rgba(71, 71, 71, 0.47); */
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+
+
+
+/* SCHOOL - LEVEL - CLASS INPUT */
+
+.customSpellForm__subtitle{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 0.5rem;
+    padding-top: 0.7rem;
+    font-size: 0.8rem;
+    /* margin-left: 2.3rem; */
+
+}
+
+.customSpellForm__body{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+.customSpellForm__gridWrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* border: 1px solid rgba(128, 128, 128, 0.200); */
+    border-radius: 0.5rem;
+  
+  }
+  
+.customSpellForm__gridItem1{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-start;
+    border-top-left-radius: 0.2rem;
+    gap: 0.3rem 0.7rem;
+}
+.customSpellForm__gridItem2{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 0.3rem 0.7rem;
+    border-top-right-radius: 0.2rem;
+}
+
+.customSpellForm__gridItem3{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 0.3rem 0.7rem;
+    border-top-right-radius: 0.2rem;
+}
+
+.customSpellForm__gridItem4{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 0.3rem 0.7rem;
+    border-top-right-radius: 0.2rem;
+    
+}
+.customSpellForm__gridItem5{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 0.7rem;
+    grid-column: 1/ 3 ;
+    grid-row: 3;
+    border-bottom-left-radius: 0.2rem;
+    border-bottom-right-radius: 0.2rem;
+}
+
+.customSpellForm__components{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 0.3rem 1rem;
+    border-top-right-radius: 0.2rem;
+}
+
+.customSpellForm__components label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-style: italic;
+    font-size: 0.8rem;
+    padding: 0rem 0.3rem;
+    color: rgb(182, 240, 182);
+
+}
+
+.customSpellForm__descriptionDiv{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+.customSpellForm__textareaDiv{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 0.5rem 0rem ;
+    width: 100%;
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .customSpellForm{
+      width: 350px;
+    }
+    .customSpellForm__textareaInput{
+        width: 314px;
+    }
+    .customSpellForm__gridItem3{
+      align-items: flex-start;
+      justify-content: flex-start;
+        }
+    .customSpellForm__gridItem4{
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+     .customSpellForm__components label{
+      width: 70%;
+     }      
+         
+    .--long{
+      width: 195px;
+    }
+}
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .customSpellForm{
+        width: 400px;
+    }
+
+    .customSpellForm__textareaInput{
+        width: 364px;
+    }
+
+    .customSpellForm__gridItem3{
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .customSpellForm__gridItem4{
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .customSpellForm__components label{
+        width: 60%;
+    }
+
+
+    .--long{
+        width: 245px;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  
+} 

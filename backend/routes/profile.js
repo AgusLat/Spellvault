@@ -4,6 +4,7 @@ import {
     createCharacter, 
     deleteCharacter, 
     deleteSpell, 
+    downloadFile, 
     editcharacter, 
     loadCharacter, 
     loadCharacterList, 
@@ -24,6 +25,10 @@ router.use(requireAuth)
 
 
 //ROUTE '/api/profile/createcharacter'
+
+//GET
+router.get('/download/:filename', downloadFile)
+
 
 //POST
 router.post('/createcharacter', createCharacter)
