@@ -78,7 +78,8 @@
 }
 
 .createSpells__resources>p{
-    margin-bottom: 0px;
+    margin-bottom: 1rem;
+
     color: rgb(125 201 193)
 
 }
@@ -88,11 +89,12 @@
     list-style: square;
     display: flex;
     flex-direction: column;
-    gap: 0.7rem;
+    gap: 2rem;
     font-size: 1rem;
     margin-bottom: 25px;
-
+    padding-inline-start: 2rem;
 }
+
 
 
 .createSpells__resources li::marker{
@@ -270,6 +272,7 @@
     }
 
     .createSpells__resources>p{
+
         padding: 0rem 0.8rem;
     }
 
@@ -280,7 +283,7 @@
 
 
     .createSpells__resources > ul{
-        gap: 0.7rem;
+
         font-size: 0.8rem;
         margin-bottom: 25px;
     

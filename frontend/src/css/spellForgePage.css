@@ -126,8 +126,7 @@
     width: 100%;
     align-items: center;
     justify-content: space-evenly;
-    /* background-color: #1C1D27; */
-    padding-top: 5rem;
+    padding-top: 3rem;
 }
 
 .--navigatePressed{
@@ -212,6 +211,12 @@
     .customSpellsHome__subInfoDiv strong{
         font-size: 1.2rem;
         color: var(--text);
+    }
+
+
+    .customSpellsHome__searchDiv {
+       
+        padding-top: 0rem;
     }
 }
 /* TABLET */

@@ -83,7 +83,8 @@
   padding: 0.4rem 2rem;
   background-color: #1c1d27a6;
   cursor: pointer;
-  margin-top: 2.1rem;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
 }
 
 .--goSearchPressed{

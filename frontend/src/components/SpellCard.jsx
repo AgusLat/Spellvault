@@ -22,11 +22,17 @@ export const SpellCard = ({spellData, spellId, hasLike, hasAdd, hasDelete, hasPr
 
   return (
    
-      <div className='spellCard'>    
+      <div className='spellCard' >    
       
         <header className='spellCard__header'>
-          <img  className='spellCard__icon' src={`/${spellData.school}.png`} alt={spellData.school} title={spellData.school} />
-          <div className='spellCard__title'>
+          <img  
+            className='spellCard__icon' 
+            src={`/${spellData.school}.png`} 
+            alt={spellData.school} 
+            title={spellData.school}
+            onClick={()=> cardBody?setCardBody(false):setCardBody(true)} 
+          />
+          <div className='spellCard__title' onClick={()=> cardBody?setCardBody(false):setCardBody(true)}>
 
             <div className='spellCard__name'>
             <h2> {spellData.name}  </h2>

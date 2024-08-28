@@ -161,13 +161,18 @@ margin: 20px 20px;
 }
 
 .advancedSearch__options select{
-    font-family: 'Philosopher', sans-serif;
+    font-family: 'ScalaSans-bolder', sans-serif;
     margin: 0rem 0.5rem;
     text-align: center;
-    background-color: black;
-    color: var(--text);
+    background-color: #1C2A2F;
+    color: var(--accent);
+    border-radius: 3px;
+    border: 1px solid rgba(41, 255, 173, 0.09);
+    font-size: 1rem;
+    height: 2rem;
 
 }
+
 
 .advancedSearch__resultsDiv{
     display: flex;

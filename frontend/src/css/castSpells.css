@@ -143,10 +143,12 @@
     font-family: 'Philosopher', sans-serif;
     font-size: 0.9rem;
     font-weight: bold;
-    padding: 0rem 0.2rem;
+    padding: 0rem 0.1rem;
     margin: 0rem 0.3rem;
     align-self: baseline;
     text-align: center;
+    height: 1.7rem;
+    border-radius: 2px;
     
 }
 
