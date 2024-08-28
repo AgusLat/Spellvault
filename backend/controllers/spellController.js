@@ -77,12 +77,14 @@ export const getFilteredSpells = async (req, res)=>{
      
     try {
 
+        let totalSpells, spells
+
         if(!isCustom){
 
-            const totalSpells = await spellModel.countDocuments(query)
+            totalSpells = await spellModel.countDocuments(query)
             const totalPages = Math.ceil((totalSpells / 10))
 
-            const spells = await spellModel
+            spells = await spellModel
                 .find(query)
                 .sort(sortField)
                 .skip((pageNumber - 1) * 10)
@@ -97,13 +99,25 @@ export const getFilteredSpells = async (req, res)=>{
                query.user_likes = { $in: [sortBy] };
             }
 
-            const totalSpells = await customSpellModel.countDocuments(query)
+            totalSpells = await customSpellModel.countDocuments(query)
 
-            const spells = await customSpellModel
+            if(sortBy === 'user_likes'){
+                spells = await customSpellModel.aggregate([
+                    { $match: query },
+                    { $addFields: { user_likes_count: { $size: "$user_likes" } } },
+                    { $sort: { user_likes_count: sortOrder } },
+                    { $skip: (pageNumber - 1) * 10 },
+                    { $limit: 10 }
+                ])
+            }
+            else{
+
+                spells = await customSpellModel
                 .find(query)
                 .sort(sortField)
                 .skip((pageNumber - 1) * 10) 
                 .limit(10)
+            }
             
             res.status(200).json({spells, totalSpells})
         }
