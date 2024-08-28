@@ -278,10 +278,19 @@ margin: 20px 20px;
         width: 95%;
     }
 
+    .advancedSearch {
+        width: 100%;
+        margin: 20px 0px;
+    }
+
     .advancedSearch__options{
         gap: 0.5rem 0rem;
     }
 
+    .advancedSearch__options select {
+        margin: 0rem 0.2rem;
+        font-size: 0.9rem;
+    }
   
 }
 /* TABLET */

@@ -272,26 +272,32 @@
     }
 
     .createSpells__resources>p{
-
         padding: 0rem 0.8rem;
     }
 
     .createSpells__browse {
         font-size: 0.9rem;
-       width: 95%;
+        width: 95%;
     }
 
 
     .createSpells__resources > ul{
 
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         margin-bottom: 25px;
     
     }
     
     .createSpells__resources  b{
-        font-size: 0.9rem;
+        font-size: 1rem;
         color: rgb(33, 107, 198);
+    
+    }
+
+    .createSpells__resources  b:active{
+        font-size: 1rem;
+        color: rgb(84, 154, 240);
+        text-decoration: underline;
     
     }
 
