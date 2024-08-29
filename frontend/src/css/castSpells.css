@@ -58,9 +58,9 @@
 
 .slotControl__select{
     background: var(--secondary);
-    color: var(--text);
+    color: var(--accent);
     border: 1px solid #434343;
-    font-family: 'Philosopher', sans-serif;
+    font-family: 'ScalaSans-bolder', sans-serif;
     font-size: 0.9rem;
     font-weight: bold;
     padding: 0rem 0.2rem;
@@ -140,7 +140,7 @@
     background: var(--secondary);
     color: var(--text);
     border: 1px solid #434343;
-    font-family: 'Philosopher', sans-serif;
+    font-family: 'ScalaSans-bolder', sans-serif;
     font-size: 0.9rem;
     font-weight: bold;
     padding: 0rem 0.1rem;

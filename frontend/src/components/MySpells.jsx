@@ -43,7 +43,7 @@ export const MySpells = () => {
         ? 
         <EmptySpellList/>
         :
-        <SpellList spellData={state.activeCharacter.spellData.knownSpells} hasAdd={false} hasDelete={true} hasPrepare={true} />)
+        <SpellList spellData={state.activeCharacter.spellData.knownSpells} hasOrderBy={true} hasAdd={false} hasDelete={true} hasPrepare={true} />)
      }
     </>
     

@@ -26,7 +26,7 @@ export const CastSpells = () => {
         ? 
         <EmptySpellList/>
         :
-        <SpellList spellData={state.activeCharacter.spellData.preparedSpells} hasCastControl={true} hasAdd={false} hasDelete={false} hasPrepare={false} />)
+        <SpellList spellData={state.activeCharacter.spellData.preparedSpells} hasOrderBy={true} hasCastControl={true} hasAdd={false} hasDelete={false} hasPrepare={false} />)
      }
     </>
   )
