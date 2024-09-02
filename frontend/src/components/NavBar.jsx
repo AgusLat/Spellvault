@@ -53,7 +53,7 @@ export const NavBar = () => {
     <>
     <nav className='nav'>
         {isVisible && <div className='nav__smoke' onClick={()=>handleClick()}></div>}
-        <NavLink className='nav__h1'><h1  >SCROLL VAULT  </h1></NavLink>
+        <NavLink className='nav__h1'><h1  >SPELL VAULT  </h1></NavLink>
 
         <div className='nav__menu'>  
 
