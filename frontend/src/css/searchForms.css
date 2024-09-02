@@ -270,6 +270,38 @@ margin: 20px 20px;
     padding: 0rem 0.5rem;
 }
 
+.results__titleInfoRefDiv{
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-family: 'MrEaves';
+    color: #C6FFE3;
+    margin-top: 2rem;
+}
+.results__titleInfoRef--namePlaceholder{
+    width: 100%;
+    max-width: 400px;
+    color: transparent;
+}
+
+.results__titleInfoRef--controlsPlaceholder{
+    min-width: 45px;
+    color: transparent;
+    visibility: hidden;
+}
+
+.results__titleInfoRef{
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* auto-fill here */
+    grid-template-rows:auto; /* first row auto */
+    grid-auto-rows: 0; /* all the other rows 0 */
+    overflow: hidden; /* hide the overflow */
+    
+    
+}
+
 .results__list{
     display: flex;
     flex-direction: column;
@@ -318,6 +350,10 @@ margin: 20px 20px;
 
     .results__orderByDiv{
         width: 90%;
+    }
+
+    .results__titleInfoRefDiv{
+        display: none;
     }
   
 }

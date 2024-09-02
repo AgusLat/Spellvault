@@ -117,7 +117,26 @@ width: 1.1rem;
   text-shadow: 0px 0px 2px white;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 100%;
+  max-width: 400px;
 }
+
+.spellCard__titleInfo{
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* auto-fill here */
+  grid-template-rows:auto; /* first row auto */
+  grid-auto-rows: 0; /* all the other rows 0 */
+  overflow: hidden; /* hide the overflow */
+}
+.spellCard__titleInfo span{
+  font-size: 0.8rem;
+  color: rgba(240, 248, 255, 0.649);
+  font-family: 'ScalaSans-bolder';
+  padding-left: 10px ;
+}
+
+
 
 .spellCard__subtitle{
     display: flex;
@@ -304,6 +323,10 @@ font-size: 0.9rem;
     font-size: 1rem;
   }
 
+  .spellCard__titleInfo{
+    display: none;
+  }
+
   .spellCard__body{
     font-size: 0.9rem;
   }
@@ -337,6 +360,14 @@ font-size: 0.9rem;
     .spellCard__title h2{
       font-size: 1.2rem;
     }
+
+    /* .spellCard__titleInfo{
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .--hideGridItem3{
+      display: none;
+    } */
   }
   
   /* DESKTOP */

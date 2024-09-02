@@ -107,6 +107,16 @@ export const QuickSearchForm = ({spells, count}) => {
           <b className='spellCard__ritualConcentration'>R</b>
           <b className='spellCard__ritualConcentration'>C</b>
       </span>  
+        {spellCardData && <div className='results__titleInfoRefDiv'>
+        <span className='results__titleInfoRef--controlsPlaceholder'>BLOCK</span>
+          <span className='results__titleInfoRef--namePlaceholder'></span>
+          <div className='results__titleInfoRef'>
+            <span>Casting time</span>
+            <span>Duration</span>
+            <span>Components</span>
+            </div>
+          <span className='results__titleInfoRef--controlsPlaceholder'>BLOCK</span>
+        </div>}
       <div className='spellCard-container'>
         {loading?<Loading size={'--small'}/>:null}
         {searchError && <div className='spellCard-container__no-matches'><NoSearch/></div>}

@@ -18,7 +18,8 @@
   display: flex;
   position: relative;
   width: 100vw ;
-  height: 93vh;
+  height: 55vh;
+  /* height: 93vh; */
   padding: 0px;
   margin: 0px;
   justify-content: flex-end;
@@ -32,6 +33,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
+  transform: translateY(-40vh);
+  height: 95vh;
   top: 0px;
   right: 0px;
   bottom: 0px;
@@ -48,7 +51,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 93vh;
+  /* height: 93vh; */
+  height: 55vh;
   width: 40%;
   min-width: 700px;
   padding: 0px;
@@ -156,7 +160,7 @@
 .search-selector__btn{
     /* font-family: 'Philosopher', sans-serif; */
     font-family: 'ScalaSans-bolder';
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: bold;
     color: var(--text);
     background-color: var(--primary);
@@ -226,7 +230,7 @@
     .landing{
       justify-content: center;
       align-items: flex-end;
-      height: 93vh;
+      height: 55vh;
       background-size: contain;
     }
     .landing__introduction{
@@ -247,7 +251,7 @@
     }
 
     .landing__p{
-      width: 90%;
+      width: 80%;
     }
 
     .landing__goSearch{
@@ -256,10 +260,7 @@
 
     /* ---SEARCH-SELECTOR BLOCK--- */
 
-    .search-selector__btn{
-      font-size: 1rem;
-    }
-
+    
 
   }
 
@@ -271,7 +272,7 @@
     .landing{
       justify-content: center;
       align-items: flex-end;
-      height: 90vh;
+      height: 55vh;
       background-size: contain;
     }
     .landing__introduction{
@@ -288,7 +289,7 @@
   
 
     .landing__p{
-      width: 90%;
+      width: 70%;
     }
   }
   

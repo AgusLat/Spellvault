@@ -43,8 +43,8 @@ export const Home = () => {
       <div className='landing'>
         <div className='landing__introduction'>
           <h2 className='landing__h2'>AN ARCANE LIBRARY FOR D&D 5e</h2>
-          <p className='landing__p'><strong>SCROLL VAULT</strong> is a tool designed to help <strong>D&D</strong> players organize their spells, assign them to different characters, or quickly check specific spell information.</p>
-          <p className='landing__p'>The spells that are available are a combination of the official spell list for <strong>D&D 5th edition</strong> and homebrew spells, which you can create yourself or rate other people's creations.</p>
+          <p className='landing__p'><strong>SCROLL VAULT</strong> is your go-to tool for managing <strong>D&D</strong> spells and characters. Easily organize, assign, and explore both official <strong>D&D 5th edition</strong> spells and custom homebrew creations.</p>
+          {/* 
           <div
             className={'landing__goSearch' +  (isPressed? ' --goSearchPressed': '')}
             onTouchStart={()=>{setIsPressed(true)}}
@@ -55,7 +55,7 @@ export const Home = () => {
             > 
             <strong>START YOUR SEARCH BELOW </strong>
             <img src='/down-arrow.svg' alt='down-arrow-icon'></img>
-          </div>
+          </div> */}
         </div>
       </div>
 

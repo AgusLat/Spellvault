@@ -76,7 +76,7 @@ transition:  1s ease-in-out;
   justify-content: flex-start;
 }
 
-.vaultWrapper__content span{
+.vaultWrapper__content>span{
   cursor: pointer;
 }
 

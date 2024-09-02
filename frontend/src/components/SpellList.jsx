@@ -97,6 +97,22 @@ export default function SpellList({spellData, hasAdd, hasLike, hasDelete, hasPre
 
           </select>
         </div>}
+        {spellData.length > 0 && <div className='results__titleInfoRefDiv'>
+        <span className='results__titleInfoRef--controlsPlaceholder'>BLOCK</span>
+          <span className='results__titleInfoRef--namePlaceholder'></span>
+          <div className='results__titleInfoRef'>
+            <span>Casting time</span>
+            <span>Duration</span>
+            <span>Components</span>
+            </div>
+          <span className='results__titleInfoRef--controlsPlaceholder'>BLOCK</span>
+          
+          {hasAdd && <span className='results__titleInfoRef--controlsPlaceholder'>BLOCK</span>}
+          {hasLike && <span className='results__titleInfoRef--controlsPlaceholder'>BLOCK</span>}
+          {hasDelete && <span className='results__titleInfoRef--controlsPlaceholder'>BLOCK</span>}
+          {hasPrepare && <span className='results__titleInfoRef--controlsPlaceholder'>BLOCK</span>}
+          {hasCastControl && <span className='results__titleInfoRef--controlsPlaceholder'>BLOCK BLOCK</span>}
+        </div>}
         <ul className='results__list'>
         {sortedSpells.map(item=> {
           return (

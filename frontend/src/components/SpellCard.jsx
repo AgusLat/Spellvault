@@ -36,6 +36,11 @@ export const SpellCard = ({spellData, spellId, hasLike, hasAdd, hasDelete, hasPr
 
             <div className='spellCard__name'>
             <h2> {spellData.name}  </h2>
+            <div className='spellCard__titleInfo'>
+              <span>{spellData.casting_time}</span>
+              <span>{spellData.duration}</span>
+              <span className='--hideGridItem3'>{spellData.components}</span>
+            </div>
            </div>
             
             <div className='spellCard__subtitle'>
