@@ -9,7 +9,7 @@ import { SpellCard } from './SpellCard'
 
 export default function SpellList({spellData, hasAdd, hasLike, hasDelete, hasPrepare, hasCastControl, hasOrderBy}) {
 
-  const [listOrder, setListOrder] = useState('level')
+  const [listOrder, setListOrder] = useState(hasOrderBy?'level':null)
   const [sortedSpells, setSortedSpells] = useState([...spellData])
 
   
